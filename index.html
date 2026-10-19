@@ -126,10 +126,20 @@ tr.sep td{border-top:2px solid var(--line)}
 .side-h small{font-family:var(--body);text-transform:none;letter-spacing:0;font-size:12.5px;color:var(--muted);font-weight:500}
 .side-scroll{overflow-x:auto;padding-bottom:4px}
 .cols{display:grid;grid-template-columns:repeat(3,minmax(150px,1fr));gap:14px;min-width:500px}
-.bcol{display:flex;flex-direction:column;justify-content:space-around;gap:10px}
+.bcol{display:flex;flex-direction:column;justify-content:space-around;gap:10px;position:relative;padding-top:26px}
+.bcol>h4{position:absolute;top:0;left:0}
 .bcol h4{margin:0 0 4px;font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:13px;letter-spacing:.06em;color:var(--muted)}
 .final{display:flex;flex-direction:column;justify-content:center;gap:8px}
 .final .bm{border-color:var(--gold);border-width:2px}
+.cols.cols5{grid-template-columns:repeat(5,minmax(132px,1fr));min-width:720px}
+.bm .code{display:block;font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.05em;color:var(--muted);padding:3px 8px 0}
+.bm.tbd .code{font-style:normal}
+.bracket2.big{width:auto;margin-left:0;transform:none;grid-template-columns:1fr}
+.bracket2.big .side-scroll{overflow-x:auto}
+.bracket2.big .cols.cols5{min-width:720px;direction:ltr}
+.bracket2.big .final{align-items:flex-start}
+.bracket2.big .final .bm{min-width:200px}
+
 .final h4{margin:0;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:18px;letter-spacing:.06em;color:var(--gold-ink);text-align:center}
 @media (min-width:1060px){
   .bracket2{grid-template-columns:1fr 170px 1fr;align-items:stretch;width:min(1240px,calc(100vw - 48px));margin-left:50%;transform:translateX(-50%)}
@@ -138,6 +148,9 @@ tr.sep td{border-top:2px solid var(--line)}
   .side.right .cols{direction:rtl}
   .side.right .cols>*{direction:ltr}
   .side.right .side-h{justify-content:flex-end}
+  .bracket2.big{grid-template-columns:1fr;width:auto;margin-left:0;transform:none}
+  .bracket2.big .side-scroll{overflow-x:auto}
+  .bracket2.big .cols.cols5{min-width:720px}
 }
 .bm{background:var(--surface);border:1px solid var(--line);border-radius:9px;overflow:hidden;font-size:13.5px}
 .bm div{display:grid;grid-template-columns:24px 1fr auto;gap:6px;align-items:center;padding:6px 8px;min-width:0}
@@ -571,13 +584,15 @@ const SNAP_K=[
 {g:5,ar:"ritorno",p:[["007586","2026-12-09","19:45","calendario","Basket Seregno","Rimadesio AURORA",-1,-1,-1,-1,"Scuole Medie","Via Carroccio 51/53","SEREGNO","MB"],["007584","2026-12-12","18:00","calendario","LESMO 2004","INCANET BK CESANO SEVESO",-1,-1,-1,-1,"PALESTRA SCUOLA MEDIA","Via Donna Rosa 15","LESMO","MB"],["007585","2026-12-12","15:30","calendario","PALL. LISSONE","MASTERS CARATE",-1,-1,-1,-1,"Palazzetto","Via Caravaggio snc","LISSONE","MB"]]}
 ];
 
+// U14 Regionale, prima fase: classifiche di tutti i gironi salvate il 19/10/2026 (squadra, G, V, P, PF, PS)
+const U14_GIRONI=[{"k":"A","code":"85640","com":"PBS","t":[["BASKET LIONS DEL CHIESE",2,2,0,142,104],["PQBASKET BASSO MANTOVANO",1,0,1,42,67],["BASKET BANCOLE",1,1,0,98,45],["JBSTINGS CURTATONE",1,0,1,45,98],["CAMS SERVIZI EDILI VIADANA",1,0,1,49,68],["S. PIO X MANTOVA",2,1,1,130,124]]},{"k":"B","code":"85641","com":"PBS","t":[["POL.CAPRIOLESE",2,0,2,97,139],["Avicola Monte Verde CXO OSPITA",2,2,0,160,127],["BASKET ISEO",2,1,1,232,98],["SOCIETA' POLISPORTIVA ERBUSCO",2,0,2,31,298],["YES BASKETBALL GUSSAGO",1,1,0,136,17],["PALL. PISOGNE",1,1,0,63,40]]},{"k":"C","code":"85642","com":"PBS","t":[["Imbal Carton NUOVA BK SALO'",2,1,1,140,120],["Basket Piu' Rezzato",2,0,2,95,152],["NBB MAZZANO",2,1,1,121,157],["VIRTUS DESENZANO",2,2,0,155,105],["BASKET SAN ZENO",2,1,1,124,112],["Pallacanestro Monteclarense",2,1,1,126,115]]},{"k":"D","code":"85643","com":"PBS","t":[["BRESCIA BK RONCADELLE",2,1,1,119,110],["PALL. GARDONESE",2,2,0,185,125],["LIONS BASKET SCHOOL BRESCIA",2,1,1,99,134],["CUS BRESCIA BIANCA",2,0,2,83,127],["TEAM 75 LOGRATO",2,1,1,170,152],["CUS BRESCIA BLU",2,1,1,128,136]]},{"k":"E","code":"85644","com":"PBS","t":[["BASKET LODI",2,1,1,139,95],["JU.VI. CREMONA BASKET 1952",2,2,0,153,105],["Tempocasa Cremona SANSEBASKET",2,0,2,32,261],["PALLACANESTRO CREMA",2,2,0,305,30],["AZIENDA CARTARIA PIZZIGHETTONE",2,1,1,156,120],["MANERBIO BASKET",2,0,2,60,234]]},{"k":"F","code":"85645","com":"PBG","t":[["BASKET 86 CARAVAGGIO",2,2,0,177,74],["GRUPPO BK COLOGNO AL SERIO",2,0,2,61,153],["VISCONTI BRIGNANO",2,2,0,142,89],["SCUOLA BASKET TREVIGLIO",2,1,1,146,141],["NPdA CASSANO D'ADDA",1,0,1,59,93],["FORZE VIVE INZAGO",1,0,1,49,84]]},{"k":"G","code":"85646","com":"PBG","t":[["EXCELSIOR BERGAMO",2,0,2,113,168],["SERIANA BK 75",1,1,0,95,47],["Lussana Bergamo",2,1,1,145,146],["PALAVAL BASKET 2004",2,1,1,155,149],["VIRTUS PALL. GORLE",1,1,0,64,62]]},{"k":"H","code":"85647","com":"PBG","t":[["GRUPPO SPORTIVO BONATE SOTTO",2,2,0,153,99],["RHINOS ROBBIATE",2,1,1,153,134],["FORTITUDO BUSNAGO",2,0,2,74,127],["PALL. AURORA 1966 TREZZO",2,1,1,97,143],["DI. PO. VIMERCATE",2,1,1,123,91],["CALUSCHESE BASKET",2,1,1,106,112]]},{"k":"I","code":"85648","com":"PBG","t":[["BASKET LECCO",2,1,1,98,120],["BASKET CLUB TIRANO",2,0,2,84,185],["Zetabi srl MORBEGNO 70",1,1,0,72,62],["CARPE DIEM BASKET",2,1,1,134,118],["G.S. GIOVANILE CIVATESE",1,1,0,133,36]]},{"k":"J","code":"85649","com":"PBG","t":[["CSA AGRATE BRIANZA",2,1,1,121,140],["PALL. MONZA FORTI E LIBERI ner",2,2,0,188,85],["PALL. MONZA FORTI E LIBERI bia",2,0,2,66,156],["SDI BASKET BRUGHERIO",2,2,0,122,87],["ASA CINISELLO",2,1,1,106,96],["ASD MB501",2,0,2,82,121]]},{"k":"K","code":"85650","com":"PBG","t":[]},{"k":"L","code":"85651","com":"PVA","t":[["Pallacanestro Albavilla",1,0,1,70,88],["BASKET COSTA",2,1,1,142,163],["LE BOCCE CASA DELLA GIOVENTU'",2,2,0,198,86],["PALLACANESTRO CABIATE",1,0,1,32,105],["PALLACANESTRO CANTU'",0,0,0,0,0]]},{"k":"M","code":"85652","com":"PVA","t":[["BLACKCOURTH BK CUCCIAGO BULLS",1,1,0,52,47],["VIRTUS PALL. CERMENATE",2,1,1,142,89],["LARIO ACADEMY",2,0,2,37,115],["G.S. VILLAGUARDIA",2,1,1,79,87],["INDIPENDENTE APPIANO",2,1,1,154,135],["AMICI DELLA PALL. VARESE",1,1,0,76,67]]},{"k":"N","code":"85653","com":"PVA","t":[["Pallacanestro Virtus Luino",2,2,0,154,123],["DBMC SA VARESE ACADEMY ARCISAT",2,1,1,120,118],["ROBUR ET FIDES VARESE",1,1,0,42,39],["MALNATE BASKETBALL",2,0,2,102,123],["CAMPUS VARESE",2,1,1,128,92],["LA SPORTIVA GAVIRATE",1,0,1,32,83]]},{"k":"O","code":"85654","com":"PVA","t":[["BASKET AZZATE",2,2,0,141,101],["DRAGHI GORLAZY MARNATE",2,1,1,121,126],["SPORTLANDIA TRADATE",2,1,1,105,127],["HUB DEL SEMPIONE ARANCIO",2,0,2,106,140],["HUB DEL SEMPIONE GRIGIO",2,0,2,113,141],["BASKET ACADEMY TICINO LONATE",2,2,0,142,93]]},{"k":"P","code":"85655","com":"PVA","t":[["PALL. GIOV. ROBUR SARONNO",2,1,1,82,85],["CMB ALTOMILANESE",2,0,2,99,127],["BASKET CANEGRATE",2,1,1,135,138],["BASKET LAINATE",1,1,0,69,58],["PALL. BUSTO ARSIZIO",1,1,0,62,49],["ACCADEMIA BK ALTOM.SE",2,1,1,104,94]]},{"k":"Q","code":"85656","com":"PVA","t":[["BASKETTIAMO VITTUONE",1,1,0,60,59],["LEVEL UP BASKET PROGRAM",2,0,2,118,129],["Victor Basket Rho",2,0,2,119,132],["C.M.B. RHO",2,2,0,124,109],["ARDENS SEDRIANO",2,2,0,149,124],["SETTIMO BASKET",1,0,1,55,72]]},{"k":"R","code":"85657","com":"RLO","t":[["ARDOR BOLLATE",1,1,0,81,52],["SOUL BASKET MILANO",1,0,1,52,81],["POLISPORTIVA GAREGNANO 1976",1,1,0,77,22],["AZZURRI NIGUARDESE MILANO",1,0,1,22,77],["SOCIAL O.S.A. MILANO ROSSA",1,1,0,85,72],["SOCIAL O.S.A. MILANO BIANCA",1,0,1,72,85]]},{"k":"S","code":"85658","com":"RLO","t":[["BASKET PIOLTELLO",2,0,2,102,118],["MARTESANA BASKETBALL PROJECT",2,2,0,125,103],["MALASPINA SPORT TEAM",2,1,1,143,155],["GAMMA SEGRATE",2,1,1,114,124],["CENTRO SCHUSTER MILANO",2,0,2,85,121],["LIBERTAS CERNUSCO",2,2,0,155,103]]},{"k":"T","code":"85659","com":"RLO","t":[["CANOTTIERI MILANO",1,0,1,27,56],["URANIA MILANO",2,2,0,138,68],["SAN CARLO SPORT MILANO",1,1,0,72,27],["C R A C BIONICS",2,0,2,68,154],["LEONE XIII MILANO",1,1,0,65,52],["AURORA MILANO",1,0,1,52,65]]},{"k":"U","code":"85660","com":"RLO","t":[["META 2000 SAN DONATO",1,1,0,90,41],["EBRO BASKET",2,0,2,86,146],["ARMANI OLIMPIA MILANO",1,1,0,127,35],["TUMMINELLI ROMANA MILANO",1,0,1,35,127],["CITTA' DI OPERA",2,2,0,137,89],["BASKET ROZZANO PRO LOCO",1,0,1,44,81]]},{"k":"V","code":"85661","com":"RLO","t":[["NUOVA OLYMPIA BK VOGHERA",1,0,1,40,71],["OSCOM MILANO3 BASIGLIO",2,1,1,113,86],["SANMAURENSE PAVIA",1,1,0,46,42],["VIVISPORT LANDRIANO",0,0,0,0,0],["CENTRO BASKET LOCATE",0,0,0,0,0]]}];
 const API='https://backend.fip.it/api/v1/';
-const qs=(champ,code)=>`group=campionati-regionali&regione_codice=LO&comitato_codice=${champ.com}&sesso=M&codice_campionato=${champ.fip}&codice_fase=1&codice_girone=${code}`;
+const qs=(champ,code,com)=>`group=campionati-regionali&regione_codice=LO&comitato_codice=${com||champ.com}&sesso=M&codice_campionato=${champ.fip}&codice_fase=1&codice_girone=${code}`;
 const CHAMPS={
   U13G:{id:'U13G',label:'U13 Gold',long:'Under 13 Gold',excel:'U13-G',fip:'U13G/M',com:'RLO',my:'B',
     gironi:[{k:'A',code:'85666',snap:SNAP_A},{k:'B',code:'85667',snap:SNAP_B},{k:'C',code:'85668',snap:SNAP_C}]},
   U14R:{id:'U14R',label:'U14 Reg.',long:'Under 14 Regionale',excel:'U14-R',fip:'U14S/M',com:'PBG',my:'K',
-    gironi:[{k:'K',code:'85650',snap:SNAP_K}]}
+    gironi:U14_GIRONI.map(G=>({k:G.k,code:G.code,com:G.com,snap:G.k==='K'?SNAP_K:null,tab:G.t}))}
 };
 const CH_LIST=Object.values(CHAMPS);
 const TEAM_KEY='AURORA';
@@ -589,7 +604,7 @@ const SEED_PAIRS=[[1,16],[8,9],[5,12],[4,13],[3,14],[6,11],[7,10],[2,15]];
 const GIORNI=['dom','lun','mar','mer','gio','ven','sab'];
 const MESI=['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
 const KEEP_UP=/^(OSA|ABA|CBC|DBMC|SA|BK|HUB|U13|U14)$/;
-const clean=s=>String(s||'').replace(/а/g,'a').replace(/\s+/g,' ').trim();
+const clean=s=>String(s||'').replace(/а/g,'a').replace(/ї/g,'').replace(/\s+/g,' ').trim();
 const isMe=n=>{const u=clean(n).toUpperCase();return u.includes(TEAM_KEY)&&!u.includes('MILANO')};
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function pretty(n){
@@ -614,7 +629,7 @@ const fromSnap=(snap,gir,ch)=>snap.flatMap(r=>r.p.map(a=>mk({numero_gara:a[0],da
 const fromApi=(json,gir,ch)=>json.flatMap(r=>(r.partite||[]).map(x=>mk(x,r.giornata,r.andata_ritorno,gir,ch)));
 
 const DATA={},SRC={};
-CH_LIST.forEach(C=>{DATA[C.id]={};C.gironi.forEach(G=>{DATA[C.id][G.k]=fromSnap(G.snap,G.k,C.id);SRC[C.id+G.k]=false})});
+CH_LIST.forEach(C=>{DATA[C.id]={};C.gironi.forEach(G=>{DATA[C.id][G.k]=G.snap?fromSnap(G.snap,G.k,C.id):[];SRC[C.id+G.k]=false})});
 const myMatches=()=>CH_LIST.flatMap(C=>DATA[C.id][C.my].filter(m=>isMe(m.home)||isMe(m.away))).sort((a,b)=>a.dt-b.dt);
 const UI={champ:'U13G',gir:'B',view:'cls',team:'',only:'all'};
 let TRIED=false,LIVE_AT=null;
@@ -624,7 +639,7 @@ async function loadLive(){
   const jobs=CH_LIST.flatMap(C=>C.gironi.map(async G=>{
     try{
       const ctl=new AbortController();const t=setTimeout(()=>ctl.abort(),8000);
-      const r=await fetch(API+'calendario.json?'+qs(C,G.code),{signal:ctl.signal});clearTimeout(t);
+      const r=await fetch(API+'calendario.json?'+qs(C,G.code,G.com),{signal:ctl.signal});clearTimeout(t);
       if(!r.ok)throw new Error('HTTP '+r.status);
       const d=fromApi(await r.json(),G.k,C.id);if(!d.length)throw new Error('vuoto');
       DATA[C.id][G.k]=d;SRC[C.id+G.k]=true;
@@ -639,7 +654,7 @@ const fmtDay=d=>`${GIORNI[d.getDay()]} ${d.getDate()} ${MESI[d.getMonth()]}`;
 const fmtFull=d=>`${['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato'][d.getDay()]} ${d.getDate()} ${MESI[d.getMonth()]}`;
 const fmtStamp=d=>`${d.getDate()}/${d.getMonth()+1} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
 const mapUrl=m=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(`${m.campo} ${m.ind} ${m.citta} ${m.prov}`);
-const fipUrl=(C,k)=>'https://fip.it/risultati/?'+qs(C,C.gironi.find(G=>G.k===k).code);
+const fipUrl=(C,k)=>{const G=C.gironi.find(G=>G.k===k);return 'https://fip.it/risultati/?'+qs(C,G.code,G.com)};
 const quoz=s=>s.pss>0?s.ps/s.pss:(s.ps>0?Infinity:0);
 const fq=s=>s.g?(s.pss>0?quoz(s).toFixed(3).replace('.',','):'—'):'—';
 const tag=ch=>`<span class="tag ${ch}">${CHAMPS[ch].label}</span>`;
@@ -648,6 +663,11 @@ const tag=ch=>`<span class="tag ${ch}">${CHAMPS[ch].label}</span>`;
 function cmp(x,y){return y.pt-x.pt||quoz(y)-quoz(x)||y.ps-x.ps||pretty(x.team).localeCompare(pretty(y.team))}
 function standings(ch,k){
   const T={};const get=n=>T[n]||(T[n]={team:n,gir:k,ch,g:0,v:0,p:0,ps:0,pss:0,pt:0,form:[]});
+  if(!DATA[ch][k].length){
+    // Nessuna partita caricata: uso la classifica salvata
+    const G=CHAMPS[ch].gironi.find(G=>G.k===k);
+    (G&&G.tab||[]).forEach(([n,g,v,p,ps,pss])=>{const s=get(clean(n));Object.assign(s,{g,v,p,ps,pss,pt:v*2})});
+  }
   DATA[ch][k].forEach(m=>{get(m.home);get(m.away)});
   [...DATA[ch][k]].filter(m=>m.played).sort((a,b)=>a.dt-b.dt).forEach(m=>{
     const h=get(m.home),a=get(m.away),hw=m.pc>m.po;
@@ -750,7 +770,7 @@ function standingsTable(list,opts={}){
   return `<div class="tablebox"><table>
     <thead><tr><th>#</th><th class="tm">Squadra</th>${opts.gir?'<th style="text-align:center">Gir.</th>':''}<th>Pt</th><th>G</th><th>V</th><th>P</th><th>PF</th><th>PS</th><th title="Quoziente canestri: punti fatti diviso punti subiti">Quoz.</th><th>Forma</th></tr></thead>
     <tbody>${list.map((s,i)=>{
-      const cls=[isMe(s.team)?'aur':'',opts.cut&&i===opts.cut-1?'cut':'',opts.groups&&i>0&&i%3===0&&i!==opts.cut?'sep':''].join(' ');
+      const cls=[isMe(s.team)?'aur':'',opts.cut&&i===opts.cut-1?'cut':'',opts.groups&&i>0&&i%(opts.groups===true?3:opts.groups)===0&&i!==opts.cut?'sep':''].join(' ');
       return `<tr class="${cls}"><td class="pos">${opts.gir?s.ov:s.rk}</td><td class="tm">${esc(pretty(s.team))}</td>${opts.gir?`<td class="gr"><span class="gpill">${s.rk}° ${s.gir}</span></td>`:''}<td class="pt">${s.pt}</td><td>${s.g}</td><td>${s.v}</td><td>${s.p}</td><td>${s.ps}</td><td>${s.pss}</td><td>${fq(s)}</td><td><span class="form">${s.form.slice(-5).map(f=>`<i class="${f}" title="${f==='V'?'Vinta':'Persa'}"></i>`).join('')}</span></td></tr>`}).join('')}</tbody>
   </table></div>`;
 }
@@ -760,7 +780,7 @@ function renderGironi(){
   if(!C.gironi.some(G=>G.k===UI.gir))UI.gir=C.my;
   const k=UI.gir,ms=DATA[C.id][k];
   let html=`<div class="controls">
-    ${C.gironi.length>1?`<div class="seg" role="group" aria-label="Girone">${C.gironi.map(G=>`<button type="button" data-gir="${G.k}" aria-pressed="${G.k===k}">Girone ${G.k}</button>`).join('')}</div>`:`<span class="glabel">Girone ${k}</span>`}
+    ${C.gironi.length>5?`<select id="f-gir" aria-label="Girone">${C.gironi.map(G=>`<option value="${G.k}"${G.k===k?' selected':''}>Girone ${G.k}${G.k===C.my?' · Aurora':''}</option>`).join('')}</select>`:C.gironi.length>1?`<div class="seg" role="group" aria-label="Girone">${C.gironi.map(G=>`<button type="button" data-gir="${G.k}" aria-pressed="${G.k===k}">Girone ${G.k}</button>`).join('')}</div>`:`<span class="glabel">Girone ${k}</span>`}
     <div class="seg" role="group" aria-label="Vista">${[['cls','Classifica'],['cal','Calendario']].map(([v,l])=>`<button type="button" data-view="${v}" aria-pressed="${UI.view===v}">${l}</button>`).join('')}</div>
   </div>`;
   if(UI.view==='cls'){
@@ -788,17 +808,93 @@ function renderGironi(){
   el.querySelectorAll('[data-gir]').forEach(b=>b.addEventListener('click',()=>{UI.gir=b.dataset.gir;UI.team='';renderGironi()}));
   el.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{UI.view=b.dataset.view;renderGironi()}));
   el.querySelector('#f-team')?.addEventListener('change',e=>{UI.team=e.target.value;renderGironi()});
+  el.querySelector('#f-gir')?.addEventListener('change',e=>{UI.gir=e.target.value;UI.team='';renderGironi()});
   el.querySelectorAll('[data-only]').forEach(b=>b.addEventListener('click',()=>{UI.only=b.dataset.only;renderGironi()}));
 }
 
+// ---- U14 Regionale: prima fase su tutti i gironi e playoff Silver (schema 2025/26) ----
+const U14_SILVER_CUT=3;
+// Confronto tra gironi diversi (regola 2025/26): meno sconfitte, poi quoziente canestri
+function cmpCross(x,y){return x.p-y.p||quoz(y)-quoz(x)||y.ps-x.ps||pretty(x.team).localeCompare(pretty(y.team))}
+function u14Phase1(){
+  const per=CHAMPS.U14R.gironi.map(G=>standings('U14R',G.k));
+  const max=Math.max(...per.map(l=>l.length));const out=[];
+  for(let r=1;r<=max;r++){out.push(...per.map(l=>l[r-1]).filter(Boolean).sort(cmpCross))}
+  return out.map((s,i)=>(s.ov=i+1,s));
+}
+// Teste di serie del playoff Silver 2025/26 (64 squadre, gara secca in casa della meglio classificata)
+const U14_SEED_RULES=[
+  {from:1,to:10,label:'1ª Silver',short:'1ª S',box:'1ª Silver'},
+  {from:11,to:20,label:'2ª Silver',short:'2ª S',box:'2ª Silver'},
+  {from:21,to:30,label:'3ª Silver',short:'3ª S',box:'3ª Silver'},
+  {from:31,to:40,label:'4ª Silver',short:'4ª S',box:'4ª Silver'},
+  {from:41,to:50,label:'5ª Silver',short:'5ª S',box:'5ª Silver'},
+  {from:51,to:59,label:'1ª Bronze',short:'1ª B',box:'1ª Bronze'},
+  {from:60,to:64,label:'migliori 2ª Bronze',short:'2ª B',box:'2ª Bronze'}];
+const seedRule=n=>U14_SEED_RULES.find(r=>n>=r.from&&n<=r.to);
+// Ordine standard del tabellone: 1-64, 32-33, 16-49, ...
+function bracketOrder(n){let a=[1,2];while(a.length<n){const m=a.length*2+1;a=a.flatMap(x=>[x,m-x])}return a}
+
+function renderGenU14(el){
+  const all=u14Phase1(),silver=all.filter(s=>s.rk<=U14_SILVER_CUT),me=all.find(s=>isMe(s.team));
+  const games=new Set(all.map(s=>s.g));
+  el.innerHTML=`<h2>U14 prima fase · tutti i gironi</h2>
+    ${me?`<div class="card" style="margin-bottom:14px"><div class="kicker">${tag('U14R')} Aurora nella prima fase</div>
+      <div class="path"><div><span class="big">${me.rk}° K</span><small>Nel girone</small></div>
+      <div><span class="big">${me.ov}°</span><small>Su ${all.length} squadre</small></div>
+      <div><span class="zone ${me.rk<=U14_SILVER_CUT?'gold':'silver'}">${me.rk<=U14_SILVER_CUT?'Verso il Silver':'Verso il Bronze'}</span></div></div>
+      <div class="venue">Oggi ${silver.length} squadre (le prime 3 di ${CHAMPS.U14R.gironi.length} gironi) andrebbero nella seconda fase Silver, le altre ${all.length-silver.length} nella Bronze.</div></div>`:''}
+    ${standingsTable(all,{gir:true,cut:silver.length,groups:CHAMPS.U14R.gironi.length})}
+    <div class="legend"><span><span class="zone gold">1–${silver.length}</span> Seconda fase Silver</span><span><span class="zone silver">${silver.length+1}–${all.length}</span> Seconda fase Bronze</span></div>
+    <p class="note">Ordine: prima tutte le prime dei gironi, poi le seconde, e così via. Tra squadre con la stessa posizione conta il numero di sconfitte e poi il quoziente canestri, come nel regolamento 2025/26, perché i gironi hanno 5 o 6 squadre.${games.size>1?' Le squadre hanno giocato un numero diverso di partite, quindi il confronto oggi è solo indicativo.':''} Questa classifica serve a capire chi va nel Silver; le teste di serie del playoff si decidono dopo la seconda fase.</p>`;
+}
+
+function renderFinU14(el){
+  const order=bracketOrder(64),pairs=[];for(let i=0;i<order.length;i+=2)pairs.push([order[i],order[i+1]]);
+  const seedBox=n=>{const r=seedRule(n);return `<div><span class="s">${n}</span><span class="nm">${r.box}</span><span></span></div>`};
+  const roundNames=['Trentaduesimi','Sedicesimi','Ottavi','Quarti','Semifinale'],codes=['T','S','O','Q','SF'];
+  const side=(n,ps)=>{
+    const off=(n-1)*16;
+    let cols=`<div class="bcol"><h4>${roundNames[0]}</h4>${ps.map(([a,b],i)=>`<div class="bm"><span class="code">T${off+i+1}</span>${seedBox(a)}${seedBox(b)}</div>`).join('')}</div>`;
+    let count=16,base=off;
+    for(let r=1;r<5;r++){
+      const nb=base/2;let boxes='';
+      for(let i=0;i<count/2;i++){
+        const c=r===4?`SF${n}`:`${codes[r]}${nb+i+1}`;
+        boxes+=`<div class="bm tbd"><span class="code">${c}</span><div>Vinc. ${codes[r-1]}${base+2*i+1}</div><div>Vinc. ${codes[r-1]}${base+2*i+2}</div></div>`;
+      }
+      cols+=`<div class="bcol"><h4>${r===4?roundNames[4]+' '+n:roundNames[r]}</h4>${boxes}</div>`;count/=2;base=nb;
+    }
+    return `<div class="side"><div class="side-h">Lato ${n}<small>teste di serie ${n===1?'1, 4, 5, 8':'2, 3, 6, 7'}</small></div><div class="side-scroll"><div class="cols cols5">${cols}</div></div></div>`;
+  };
+  // Percorso di Aurora in base al piazzamento nel girone Silver
+  const path=U14_SEED_RULES.slice(0,5).map((r,i)=>{
+    const oppFrom=65-r.to,oppTo=65-r.from;
+    const opp=[...new Set([oppFrom,oppTo].map(n=>seedRule(n).label))].join(' / ');
+    return `<tr><td class="tm">${i+1}ª nel girone Silver</td><td>${r.from}–${r.to}</td><td class="tm">${opp} (${oppFrom}–${oppTo})</td><td>${r.to<=32?'in casa':r.from>32?'in trasferta':`casa (${r.from}–32), trasferta (33–${r.to})`}</td></tr>`}).join('');
+  const all=u14Phase1(),me=all.find(s=>isMe(s.team));
+  el.innerHTML=`<h2>Playoff Silver U14 · schema 2025/26</h2>
+    <div class="card" style="margin-bottom:14px"><div class="kicker">${tag('U14R')} Come si arriva al playoff</div>
+      <div class="venue">Nel 2025/26: le prime 3 di ogni girone della prima fase giocano la seconda fase <b>Silver</b> (gironi da 7–8 squadre, andata e ritorno). Al playoff Silver vanno le prime 5 di ogni girone Silver, le prime dei gironi Bronze e le migliori seconde Bronze, per 64 squadre. Gare secche in casa della meglio classificata; si giocano anche le partite per i posti dal 3° all'8°.<br><br>
+      Aurora oggi è <b>${me?me.rk+'ª nel girone K':'—'}</b>${me&&me.rk<=U14_SILVER_CUT?', quindi in corsa per il Silver':''}. La posizione nel tabellone dipenderà dal piazzamento nel girone Silver:</div>
+      <div class="tablebox"><table style="min-width:520px"><thead><tr><th class="tm">Se Aurora arriva</th><th>Testa di serie</th><th class="tm">Primo turno contro</th><th>Campo</th></tr></thead><tbody>${path}<tr><td class="tm">6ª–8ª nel girone Silver</td><td>—</td><td class="tm">va al playoff Bronze</td><td></td></tr></tbody></table></div>
+    </div>
+    <div class="bracket2 big">
+      ${side(1,pairs.slice(0,16))}
+      <div class="final"><h4>Finale</h4><div class="bm tbd"><div>Vinc. SF1</div><div>Vinc. SF2</div></div></div>
+      ${side(2,pairs.slice(16))}
+    </div>
+    <p class="note">Numeri = teste di serie: 1–10 prime dei gironi Silver, 11–20 seconde, 21–30 terze, 31–40 quarte, 41–50 quinte, 51–59 prime Bronze, 60–64 migliori seconde Bronze. Lo schema è quello 2025/26, con 10 gironi Silver e 9 Bronze. Quest'anno al Silver vanno ${all.filter(s=>s.rk<=U14_SILVER_CUT).length} squadre invece di 78, quindi numero dei gironi e teste di serie possono cambiare: aggiorno appena esce la formula 2026/27.</p>`;
+}
+
 const U14_PENDING=`<div class="card"><div class="kicker">${'Under 14 Regionale'} · formula 2026/27 non ancora pubblicata</div>
-  <div class="venue">Prima fase: 22 gironi (17 da 6 squadre e 5 da 5), andata e ritorno fino a metà dicembre. Le fasi successive saranno definite da una delibera del Comitato Regionale non ancora uscita.<br><br>
+  <div class="venue">Prima fase: 22 gironi (18 da 6 squadre e 4 da 5), andata e ritorno fino a metà dicembre. Le fasi successive saranno definite da una delibera del Comitato Regionale non ancora uscita.<br><br>
   Nel 2025/26 funzionava così: le prime 3 di ogni girone passavano alla seconda fase <b>Silver</b>, le 4ª–6ª alla <b>Bronze</b> (gironi da gennaio ad aprile). Poi due playoff a eliminazione diretta da 64 squadre, in gara secca in casa della meglio classificata. Per confrontare gironi diversi si guardava il numero di sconfitte e poi il quoziente canestri.<br><br>
   Appena esce la formula aggiungo qui seconda fase e playoff.</div></div>`;
 
 function renderGen(gen){
   const el=document.getElementById('p-gen');
-  if(UI.champ==='U14R'){el.innerHTML='<h2>Seconda fase U14</h2>'+U14_PENDING;return}
+  if(UI.champ==='U14R'){renderGenU14(el);return}
   el.innerHTML=`<h2>Classifica generale avulsa U13 Gold</h2>
     ${standingsTable(gen,{gir:true,cut:GOLD_SPOTS,groups:true})}
     <div class="legend"><span><span class="zone gold">1–16</span> Tabellone Gold</span><span><span class="zone silver">17–30</span> Tabellone Silver</span></div>
@@ -831,7 +927,7 @@ function bracketHTML(gen,first,count,title){
 }
 function renderFin(gen){
   const el=document.getElementById('p-fin');
-  if(UI.champ==='U14R'){el.innerHTML='<h2>Playoff U14</h2>'+U14_PENDING;return}
+  if(UI.champ==='U14R'){renderFinU14(el);return}
   const silverN=gen.length-GOLD_SPOTS,me=gen.find(s=>isMe(s.team));
   el.innerHTML=bracketHTML(gen,1,GOLD_SPOTS,'Tabellone Gold U13 · posti 1–16')+
     `<p class="note">Numeri = teste di serie, dalla classifica generale attuale. La 1ª e la 2ª sono su lati opposti e possono incontrarsi solo in finale; la 4ª è nel lato della 1ª, la 3ª in quello della 2ª. Nel 2025/26 ogni turno era andata e ritorno, con il ritorno in casa della meglio classificata.</p>`+
