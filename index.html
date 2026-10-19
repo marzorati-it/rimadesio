@@ -189,7 +189,7 @@ tr.sep td{border-top:2px solid var(--line)}
 .sgroup{display:grid;gap:6px}
 .sgl{font-size:12px;text-transform:uppercase;letter-spacing:.06em;opacity:.8;font-weight:600}
 .srow{display:flex;gap:20px;flex-wrap:wrap}
-.champbar{display:flex;align-items:center;gap:10px;margin:16px 0 -4px;flex-wrap:wrap}
+.champbar{display:flex;align-items:center;gap:10px;margin:-6px 0 18px;flex-wrap:wrap}
 .champbar>span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
 .glabel{font-family:var(--display);font-weight:700;font-size:18px;text-transform:uppercase;letter-spacing:.04em}
 :root:not(.js) .champbar{display:none}
@@ -213,9 +213,6 @@ tr.sep td{border-top:2px solid var(--line)}
     <div class="src"><span class="dot" id="srcdot"></span><span id="srctext">Dati FIP salvati il 19/10 11:15</span><button class="refresh" id="refresh" type="button">Aggiorna</button></div>
   </header>
 
-  <div class="champbar" id="champbar" hidden><span>Campionato</span>
-    <div class="seg" role="group" aria-label="Campionato"><button type="button" data-champ="U13G" aria-pressed="true">U13 Gold</button><button type="button" data-champ="U14R" aria-pressed="false">U14 Regionale</button></div>
-  </div>
 
   <nav class="tabs" role="tablist">
     <button class="tab" role="tab" id="t-aurora" aria-selected="true" data-p="aurora" type="button">Aurora</button>
@@ -223,6 +220,9 @@ tr.sep td{border-top:2px solid var(--line)}
     <button class="tab" role="tab" id="t-gen" aria-selected="false" data-p="gen" type="button">Generale</button>
     <button class="tab" role="tab" id="t-fin" aria-selected="false" data-p="fin" type="button">Finali</button>
   </nav>
+  <div class="champbar" id="champbar" hidden><span>Campionato</span>
+    <div class="seg" role="group" aria-label="Campionato"><button type="button" data-champ="U13G" aria-pressed="true">U13 Gold</button><button type="button" data-champ="U14R" aria-pressed="false">U14 Regionale</button></div>
+  </div>
 
   <main>
     <section class="panel" id="p-aurora" data-static><h2>Prossime partite</h2><div class="nextgrid"><div class="card next">
