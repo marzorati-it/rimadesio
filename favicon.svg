@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <rect width="512" height="512" rx="112" fill="#1b2a5c"/>
   <g transform="translate(256 256)">
-    <circle r="168" fill="#e8a917"/>
+    <circle r="168" fill="#f07c00"/>
     <g fill="none" stroke="#1b2a5c" stroke-width="16" stroke-linecap="round">
       <circle r="168"/>
       <line x1="-168" y1="0" x2="168" y2="0"/>
