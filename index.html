@@ -461,7 +461,7 @@ tr.sep td{border-top:2px solid var(--line)}
     <div class="exp-msg" id="exp-msg" role="status"></div>
   </div></section>
     <section class="panel" id="p-gironi" data-static><div class="controls">
-    <div class="seg" role="group" aria-label="Girone"><button type="button" data-gir="A" aria-pressed="false">Girone A</button><button type="button" data-gir="B" aria-pressed="true">Girone B</button><button type="button" data-gir="C" aria-pressed="false">Girone C</button></div>
+    <select id="f-gir" aria-label="Girone"><option value="A">Girone A</option><option value="B" selected>Girone B · Aurora</option><option value="C">Girone C</option></select>
     <div class="seg" role="group" aria-label="Vista"><button type="button" data-view="cls" aria-pressed="true">Classifica</button><button type="button" data-view="cal" aria-pressed="false">Calendario</button></div>
   </div><div class="tablebox"><table>
     <thead><tr><th>#</th><th class="tm">Squadra</th><th>Pt</th><th>G</th><th>V</th><th>P</th><th>PF</th><th>PS</th><th title="Quoziente canestri: punti fatti diviso punti subiti">Quoz.</th><th>Forma</th></tr></thead>
@@ -780,7 +780,7 @@ function renderGironi(){
   if(!C.gironi.some(G=>G.k===UI.gir))UI.gir=C.my;
   const k=UI.gir,ms=DATA[C.id][k];
   let html=`<div class="controls">
-    ${C.gironi.length>5?`<select id="f-gir" aria-label="Girone">${C.gironi.map(G=>`<option value="${G.k}"${G.k===k?' selected':''}>Girone ${G.k}${G.k===C.my?' · Aurora':''}</option>`).join('')}</select>`:C.gironi.length>1?`<div class="seg" role="group" aria-label="Girone">${C.gironi.map(G=>`<button type="button" data-gir="${G.k}" aria-pressed="${G.k===k}">Girone ${G.k}</button>`).join('')}</div>`:`<span class="glabel">Girone ${k}</span>`}
+    ${C.gironi.length>1?`<select id="f-gir" aria-label="Girone">${C.gironi.map(G=>`<option value="${G.k}"${G.k===k?' selected':''}>Girone ${G.k}${G.k===C.my?' · Aurora':''}</option>`).join('')}</select>`:C.gironi.length>1?`<div class="seg" role="group" aria-label="Girone">${C.gironi.map(G=>`<button type="button" data-gir="${G.k}" aria-pressed="${G.k===k}">Girone ${G.k}</button>`).join('')}</div>`:`<span class="glabel">Girone ${k}</span>`}
     <div class="seg" role="group" aria-label="Vista">${[['cls','Classifica'],['cal','Calendario']].map(([v,l])=>`<button type="button" data-view="${v}" aria-pressed="${UI.view===v}">${l}</button>`).join('')}</div>
   </div>`;
   if(UI.view==='cls'){
