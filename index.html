@@ -183,6 +183,24 @@ tr.sep td{border-top:2px solid var(--line)}
 .tag.U13G{background:var(--navy);color:var(--navy-fg)}
 .tag.U14R{background:var(--gold);color:var(--on-gold)}
 .dbl{font-weight:600;color:var(--loss)}
+.sdot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:0;box-shadow:0 0 0 1px rgba(0,0,0,.18)}
+.minfo{grid-column:1 / -1;border-top:1px dashed var(--line);margin-top:4px;padding-top:4px}
+.minfo summary{cursor:pointer;font-size:12.5px;font-weight:600;color:var(--muted);list-style:none;display:inline-flex;align-items:center;gap:4px}
+.minfo summary::-webkit-details-marker{display:none}
+.minfo summary::before{content:"▸";font-size:11px;transition:transform .15s}
+.minfo[open] summary::before{transform:rotate(90deg)}
+.minfo summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:4px}
+.minfo-b{display:grid;gap:6px;padding:6px 0 2px;font-size:13px}
+.minfo-st{margin:0;color:var(--muted)}
+.minfo dl{margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:6px 16px}
+.minfo dl>div{display:grid;gap:1px;min-width:0}
+.minfo dt{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600}
+.minfo dd{margin:0;overflow-wrap:anywhere}
+.minfo dd span{color:var(--muted)}
+.minfo dd .na{color:var(--muted)}
+.info-empty{margin:0;color:var(--muted);font-style:italic}
+.slegend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--muted);margin:8px 0 0}
+.slegend span{display:inline-flex;align-items:center}
 .nextgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:12px}
 .nextgrid>*{min-width:0}
 .stats{gap:12px 34px}
@@ -210,7 +228,7 @@ tr.sep td{border-top:2px solid var(--line)}
       <div class="stat"><b>3°</b><small>Girone</small></div>
       <div class="stat"><b>1–1</b><small>V–P</small></div>
       <div class="stat"><b>2</b><small>Punti</small></div></div></div></div>
-    <div class="src"><span class="dot" id="srcdot"></span><span id="srctext">Dati FIP salvati il 19/10 11:15</span><button class="refresh" id="refresh" type="button">Aggiorna</button></div>
+    <div class="src"><span class="dot" id="srcdot"></span><span id="srctext">Dati FIP salvati il 20/10 12:30</span><button class="refresh" id="refresh" type="button">Aggiorna</button></div>
   </header>
 
 
@@ -226,11 +244,11 @@ tr.sep td{border-top:2px solid var(--line)}
 
   <main>
     <section class="panel" id="p-aurora" data-static><h2>Prossime partite</h2><div class="nextgrid"><div class="card next">
-      <div><div class="kicker"><span class="tag U13G">U13 Gold</span> Tra 5 giorni · in trasferta</div><div class="when">Sabato 24 ott · ore 20:30</div></div>
+      <div><div class="kicker"><span class="tag U13G">U13 Gold</span> Tra 4 giorni · in trasferta</div><div class="when">Sabato 24 ott · ore 20:30</div></div>
       <div class="vs"><div class="t">Urania Milano</div><div class="x">vs</div><div class="t me">Rimadesio Aurora</div></div>
       <div class="venue">Palalido Secondaria · viale Elia s.n.c., MILANO (MI) · <a href="https://www.google.com/maps/search/?api=1&query=Palalido%20Secondaria%20viale%20Elia%20s.n.c.%20MILANO%20MI" target="_blank" rel="noopener">Maps</a></div>
     </div><div class="card next">
-      <div><div class="kicker"><span class="tag U14R">U14 Reg.</span> Tra 6 giorni · in casa</div><div class="when">Domenica 25 ott · ore 16:30</div></div>
+      <div><div class="kicker"><span class="tag U14R">U14 Reg.</span> Tra 5 giorni · in casa</div><div class="when">Domenica 25 ott · ore 16:30</div></div>
       <div class="vs"><div class="t me">Rimadesio Aurora</div><div class="x">vs</div><div class="t">Masters Carate</div></div>
       <div class="venue">PALAZZETTO A. MORO · Via San Pietro 1, DESIO (MB) · <a href="https://www.google.com/maps/search/?api=1&query=PALAZZETTO%20A.%20MORO%20Via%20San%20Pietro%201%20DESIO%20MB" target="_blank" rel="noopener">Maps</a></div>
     </div></div><h2>Situazione</h2><div class="nextgrid"><div class="card"><div class="kicker"><span class="tag U13G">U13 Gold</span> Verso le finali</div>
@@ -242,12 +260,15 @@ tr.sep td{border-top:2px solid var(--line)}
       <div><span class="big">2</span><small>Punti</small></div>
       <div><span class="zone gold">Prime 3</span></div></div>
       <div class="venue">Margine sulla 4ª (Incanet BK Cesano Seveso): 0 punti. Nel 2025/26 le prime 3 di ogni girone andavano nella seconda fase Silver, le altre nella Bronze; la formula 2026/27 non è ancora uscita.</div></div></div><h2>Risultati</h2><div class="list"><div class="row">
-    <div class="d">dom 18 ott<small><span class="unoff">ufficioso</span></small></div>
+    <div class="d">dom 18 ott<small>Finale</small></div>
     <div class="teams">
       <div class="l"><span class="n me">Rimadesio Aurora</span><span class="p">77</span></div>
       <div class="w"><span class="n">Pallacanestro Cantu&#39;</span><span class="p">79</span></div>
     </div><span class="badge P">P</span>
     <div class="meta"><span class="tag U13G">U13 Gold</span> 2ª andata · gara 009623 · <a href="https://www.google.com/maps/search/?api=1&query=PALAZZETTO%20A.%20MORO%20Via%20San%20Pietro%201%20DESIO%20MB" target="_blank" rel="noopener">PALAZZETTO A. MORO, DESIO</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b">
+    <p class="minfo-st">PALAZZETTO A. MORO · Via San Pietro 1, DESIO (MB)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
     <div class="d">sab 17 ott<small>Finale</small></div>
     <div class="teams">
@@ -255,6 +276,9 @@ tr.sep td{border-top:2px solid var(--line)}
       <div class="w"><span class="n">Pall. Lissone</span><span class="p">72</span></div>
     </div><span class="badge P">P</span>
     <div class="meta"><span class="tag U14R">U14 Reg.</span> 2ª andata · gara 007561 · <a href="https://www.google.com/maps/search/?api=1&query=PALAZZETTO%20A.%20MORO%20Via%20San%20Pietro%201%20DESIO%20MB" target="_blank" rel="noopener">PALAZZETTO A. MORO, DESIO</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b">
+    <p class="minfo-st">PALAZZETTO A. MORO · Via San Pietro 1, DESIO (MB)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
     <div class="d">dom 11 ott<small>Finale</small></div>
     <div class="teams">
@@ -262,6 +286,9 @@ tr.sep td{border-top:2px solid var(--line)}
       <div class="w"><span class="n me">Rimadesio Aurora</span><span class="p">74</span></div>
     </div><span class="badge V">V</span>
     <div class="meta"><span class="tag U13G">U13 Gold</span> 1ª andata · gara 009619 · <a href="https://www.google.com/maps/search/?api=1&query=PALESTRA%20COMUNALE%20Via%20Verdi%20s.n.c.%20COSTA%20MASNAGA%20LC" target="_blank" rel="noopener">PALESTRA COMUNALE, COSTA MASNAGA</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b">
+    <p class="minfo-st">PALESTRA COMUNALE · Via Verdi s.n.c., COSTA MASNAGA (LC)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
     <div class="d">sab 10 ott<small>Finale</small></div>
     <div class="teams">
@@ -269,175 +296,250 @@ tr.sep td{border-top:2px solid var(--line)}
       <div class="w"><span class="n me">Rimadesio Aurora</span><span class="p">65</span></div>
     </div><span class="badge V">V</span>
     <div class="meta"><span class="tag U14R">U14 Reg.</span> 1ª andata · gara 007558 · <a href="https://www.google.com/maps/search/?api=1&query=Palestra%20Altopiano%20Via%20Groane%2C%2010%20SEVESO%20MB" target="_blank" rel="noopener">Palestra Altopiano, SEVESO</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b">
+    <p class="minfo-st">Palestra Altopiano · Via Groane, 10, SEVESO (MB)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div></div><h2>Calendario</h2><div class="list"><div class="row">
-    <div class="d">sab 24 ott<small>ore 20:30</small></div>
+    <div class="d">sab 24 ott<small><span class="sdot" style="background:#37ed00" title="Gara designata: la designazione è visibile" role="img" aria-label="Gara designata: la designazione è visibile"></span>ore 20:30</small></div>
     <div class="teams">
       <div class=""><span class="n">Urania Milano</span><span class="p"></span></div>
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
     </div><span class="badge S">20:30</span>
     <div class="meta"><span class="tag U13G">U13 Gold</span> 3ª andata · gara 009630 · <a href="https://www.google.com/maps/search/?api=1&query=Palalido%20Secondaria%20viale%20Elia%20s.n.c.%20MILANO%20MI" target="_blank" rel="noopener">Palalido Secondaria, MILANO</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#37ed00" title="Gara designata: la designazione è visibile" role="img" aria-label="Gara designata: la designazione è visibile"></span> Gara designata: la designazione è visibile</p>
+    <p class="minfo-st">Palalido Secondaria · viale Elia s.n.c., MILANO (MI)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">dom 25 ott<small>ore 16:30</small></div>
+    <div class="d">dom 25 ott<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 16:30</small></div>
     <div class="teams">
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
       <div class=""><span class="n">Masters Carate</span><span class="p"></span></div>
     </div><span class="badge S">16:30</span>
     <div class="meta"><span class="tag U14R">U14 Reg.</span> 3ª andata · gara 007563 · <a href="https://www.google.com/maps/search/?api=1&query=PALAZZETTO%20A.%20MORO%20Via%20San%20Pietro%201%20DESIO%20MB" target="_blank" rel="noopener">PALAZZETTO A. MORO, DESIO</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">PALAZZETTO A. MORO · Via San Pietro 1, DESIO (MB)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">mar 27 ott<small>ore 19:45</small></div>
+    <div class="d">mar 27 ott<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 19:45</small></div>
     <div class="teams">
       <div class=""><span class="n">Lesmo 2004</span><span class="p"></span></div>
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
     </div><span class="badge S">19:45</span>
     <div class="meta"><span class="tag U14R">U14 Reg.</span> 4ª andata · gara 007567 · <a href="https://www.google.com/maps/search/?api=1&query=PALESTRA%20SCUOLA%20MEDIA%20Via%20Donna%20Rosa%2015%20LESMO%20MB" target="_blank" rel="noopener">PALESTRA SCUOLA MEDIA, LESMO</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">PALESTRA SCUOLA MEDIA · Via Donna Rosa 15, LESMO (MB)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">gio 29 ott<small>ore 19:15</small></div>
+    <div class="d">gio 29 ott<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 19:15</small></div>
     <div class="teams">
       <div class=""><span class="n">Pall. Bernareggio 99</span><span class="p"></span></div>
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
     </div><span class="badge S">19:15</span>
     <div class="meta"><span class="tag U13G">U13 Gold</span> 4ª andata · gara 009633 · <a href="https://www.google.com/maps/search/?api=1&query=PALESTRA%20COMUNALE%20Via%20Petrarca%201%20BERNAREGGIO%20MB" target="_blank" rel="noopener">PALESTRA COMUNALE, BERNAREGGIO</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">PALESTRA COMUNALE · Via Petrarca 1, BERNAREGGIO (MB)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">sab 7 nov<small>ore 15:00</small></div>
+    <div class="d">sab 7 nov<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 15:00</small></div>
     <div class="teams">
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
       <div class=""><span class="n">Rhinos Robbiate</span><span class="p"></span></div>
     </div><span class="badge S">15:00</span>
     <div class="meta"><span class="tag U13G">U13 Gold</span> 5ª andata · gara 009640 · <a href="https://www.google.com/maps/search/?api=1&query=PALAZZETTO%20A.%20MORO%20Via%20San%20Pietro%201%20DESIO%20MB" target="_blank" rel="noopener">PALAZZETTO A. MORO, DESIO</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">PALAZZETTO A. MORO · Via San Pietro 1, DESIO (MB)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">dom 8 nov<small>ore 16:30</small></div>
+    <div class="d">dom 8 nov<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 16:30</small></div>
     <div class="teams">
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
       <div class=""><span class="n">Basket Seregno</span><span class="p"></span></div>
     </div><span class="badge S">16:30</span>
     <div class="meta"><span class="tag U14R">U14 Reg.</span> 5ª andata · gara 007569 · <a href="https://www.google.com/maps/search/?api=1&query=PALAZZETTO%20A.%20MORO%20Via%20San%20Pietro%201%20DESIO%20MB" target="_blank" rel="noopener">PALAZZETTO A. MORO, DESIO</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">PALAZZETTO A. MORO · Via San Pietro 1, DESIO (MB)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">sab 14 nov<small>ore 16:00</small></div>
+    <div class="d">sab 14 nov<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 16:00</small></div>
     <div class="teams">
       <div class=""><span class="n">A.B.A. Legnano</span><span class="p"></span></div>
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
     </div><span class="badge S">16:00</span>
     <div class="meta"><span class="tag U13G">U13 Gold</span> 6ª andata · gara 009642 · <a href="https://www.google.com/maps/search/?api=1&query=KNIGHTS%20PALACE%20Via%20Parma%2077%20LEGNANO%20MI" target="_blank" rel="noopener">KNIGHTS PALACE, LEGNANO</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">KNIGHTS PALACE · Via Parma 77, LEGNANO (MI)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">dom 15 nov<small>ore 16:30</small></div>
+    <div class="d">dom 15 nov<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 16:30</small></div>
     <div class="teams">
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
       <div class=""><span class="n">Incanet BK Cesano Seveso</span><span class="p"></span></div>
     </div><span class="badge S">16:30</span>
     <div class="meta"><span class="tag U14R">U14 Reg.</span> 1ª ritorno · gara 007574 · <a href="https://www.google.com/maps/search/?api=1&query=PALAZZETTO%20A.%20MORO%20Via%20San%20Pietro%201%20DESIO%20MB" target="_blank" rel="noopener">PALAZZETTO A. MORO, DESIO</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">PALAZZETTO A. MORO · Via San Pietro 1, DESIO (MB)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">sab 21 nov<small>ore 14:00</small></div>
+    <div class="d">sab 21 nov<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 14:00</small></div>
     <div class="teams">
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
       <div class=""><span class="n">Pall. Monza Forti e Liberi</span><span class="p"></span></div>
     </div><span class="badge S">14:00</span>
     <div class="meta"><span class="tag U13G">U13 Gold</span> 7ª andata · gara 009647 · <a href="https://www.google.com/maps/search/?api=1&query=PALAZZETTO%20A.%20MORO%20Via%20San%20Pietro%201%20DESIO%20MB" target="_blank" rel="noopener">PALAZZETTO A. MORO, DESIO</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">PALAZZETTO A. MORO · Via San Pietro 1, DESIO (MB)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">dom 22 nov<small>ore 15:00</small></div>
+    <div class="d">dom 22 nov<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 15:00</small></div>
     <div class="teams">
       <div class=""><span class="n">Pall. Lissone</span><span class="p"></span></div>
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
     </div><span class="badge S">15:00</span>
     <div class="meta"><span class="tag U14R">U14 Reg.</span> 2ª ritorno · gara 007576 · <a href="https://www.google.com/maps/search/?api=1&query=Palazzetto%20Via%20Caravaggio%20snc%20LISSONE%20MB" target="_blank" rel="noopener">Palazzetto, LISSONE</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">Palazzetto · Via Caravaggio snc, LISSONE (MB)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">sab 28 nov<small>ore 15:20</small></div>
+    <div class="d">sab 28 nov<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 15:20</small></div>
     <div class="teams">
       <div class=""><span class="n">Social O.S.A. Milano</span><span class="p"></span></div>
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
     </div><span class="badge S">15:20</span>
     <div class="meta"><span class="tag U13G">U13 Gold</span> 8ª andata · gara 009653 · <a href="https://www.google.com/maps/search/?api=1&query=Palapavoni%20Via%20Benigno%20Crespi%2030%20MILANO%20MI" target="_blank" rel="noopener">Palapavoni, MILANO</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">Palapavoni · Via Benigno Crespi 30, MILANO (MI)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">dom 29 nov<small>ore 18:00</small></div>
+    <div class="d">dom 29 nov<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 18:00</small></div>
     <div class="teams">
       <div class=""><span class="n">Masters Carate</span><span class="p"></span></div>
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
     </div><span class="badge S">18:00</span>
     <div class="meta"><span class="tag U14R">U14 Reg.</span> 3ª ritorno · gara 007578 · <a href="https://www.google.com/maps/search/?api=1&query=PALA%20BCC%20VIA%20TOMMASO%20GROSSI%2012%20CARATE%20BRIANZA%20MB" target="_blank" rel="noopener">PALA BCC, CARATE BRIANZA</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">PALA BCC · VIA TOMMASO GROSSI 12, CARATE BRIANZA (MB)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">sab 5 dic<small>ore 15:00</small></div>
+    <div class="d">sab 5 dic<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 15:00</small></div>
     <div class="teams">
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
       <div class=""><span class="n">Virtus Pall. Cermenate</span><span class="p"></span></div>
     </div><span class="badge S">15:00</span>
     <div class="meta"><span class="tag U13G">U13 Gold</span> 9ª andata · gara 009659 · <a href="https://www.google.com/maps/search/?api=1&query=PALAZZETTO%20A.%20MORO%20Via%20San%20Pietro%201%20DESIO%20MB" target="_blank" rel="noopener">PALAZZETTO A. MORO, DESIO</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">PALAZZETTO A. MORO · Via San Pietro 1, DESIO (MB)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">dom 6 dic<small>ore 16:30</small></div>
+    <div class="d">dom 6 dic<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 16:30</small></div>
     <div class="teams">
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
       <div class=""><span class="n">Lesmo 2004</span><span class="p"></span></div>
     </div><span class="badge S">16:30</span>
     <div class="meta"><span class="tag U14R">U14 Reg.</span> 4ª ritorno · gara 007583 · <a href="https://www.google.com/maps/search/?api=1&query=PALAZZETTO%20A.%20MORO%20Via%20San%20Pietro%201%20DESIO%20MB" target="_blank" rel="noopener">PALAZZETTO A. MORO, DESIO</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">PALAZZETTO A. MORO · Via San Pietro 1, DESIO (MB)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">mer 9 dic<small>ore 19:45</small></div>
+    <div class="d">mer 9 dic<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 19:45</small></div>
     <div class="teams">
       <div class=""><span class="n">Basket Seregno</span><span class="p"></span></div>
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
     </div><span class="badge S">19:45</span>
     <div class="meta"><span class="tag U14R">U14 Reg.</span> 5ª ritorno · gara 007586 · <a href="https://www.google.com/maps/search/?api=1&query=Scuole%20Medie%20Via%20Carroccio%2051%2F53%20SEREGNO%20MB" target="_blank" rel="noopener">Scuole Medie, SEREGNO</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">Scuole Medie · Via Carroccio 51/53, SEREGNO (MB)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">sab 12 dic<small>ore 15:00</small></div>
+    <div class="d">sab 12 dic<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 15:00</small></div>
     <div class="teams">
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
       <div class=""><span class="n">Fanaiman Basket Costa</span><span class="p"></span></div>
     </div><span class="badge S">15:00</span>
     <div class="meta"><span class="tag U13G">U13 Gold</span> 1ª ritorno · gara 009662 · <a href="https://www.google.com/maps/search/?api=1&query=PALAZZETTO%20A.%20MORO%20Via%20San%20Pietro%201%20DESIO%20MB" target="_blank" rel="noopener">PALAZZETTO A. MORO, DESIO</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">PALAZZETTO A. MORO · Via San Pietro 1, DESIO (MB)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">sab 19 dic<small>ore 17:00</small></div>
+    <div class="d">sab 19 dic<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 17:00</small></div>
     <div class="teams">
       <div class=""><span class="n">Pallacanestro Cantu&#39;</span><span class="p"></span></div>
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
     </div><span class="badge S">17:00</span>
     <div class="meta"><span class="tag U13G">U13 Gold</span> 2ª ritorno · gara 009669 · <a href="https://www.google.com/maps/search/?api=1&query=Centro%20Sport.%20'Toto%20Caimi'%20Via%20Francesco%20Baracca%2056%20CANTU'%20CO" target="_blank" rel="noopener">Centro Sport. &#39;Toto Caimi&#39;, CANTU&#39;</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">Centro Sport. &#39;Toto Caimi&#39; · Via Francesco Baracca 56, CANTU&#39; (CO)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">dom 10 gen<small>ore 16:30</small></div>
+    <div class="d">dom 10 gen<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 16:30</small></div>
     <div class="teams">
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
       <div class=""><span class="n">Urania Milano</span><span class="p"></span></div>
     </div><span class="badge S">16:30</span>
     <div class="meta"><span class="tag U13G">U13 Gold</span> 3ª ritorno · gara 009676 · <a href="https://www.google.com/maps/search/?api=1&query=PALAZZETTO%20A.%20MORO%20Via%20San%20Pietro%201%20DESIO%20MB" target="_blank" rel="noopener">PALAZZETTO A. MORO, DESIO</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">PALAZZETTO A. MORO · Via San Pietro 1, DESIO (MB)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">sab 16 gen<small>ore 15:00</small></div>
+    <div class="d">sab 16 gen<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 15:00</small></div>
     <div class="teams">
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
       <div class=""><span class="n">Pall. Bernareggio 99</span><span class="p"></span></div>
     </div><span class="badge S">15:00</span>
     <div class="meta"><span class="tag U13G">U13 Gold</span> 4ª ritorno · gara 009677 · <a href="https://www.google.com/maps/search/?api=1&query=PALAZZETTO%20A.%20MORO%20Via%20San%20Pietro%201%20DESIO%20MB" target="_blank" rel="noopener">PALAZZETTO A. MORO, DESIO</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">PALAZZETTO A. MORO · Via San Pietro 1, DESIO (MB)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">sab 23 gen<small>ore 15:00</small></div>
+    <div class="d">sab 23 gen<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 15:00</small></div>
     <div class="teams">
       <div class=""><span class="n">Rhinos Robbiate</span><span class="p"></span></div>
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
     </div><span class="badge S">15:00</span>
     <div class="meta"><span class="tag U13G">U13 Gold</span> 5ª ritorno · gara 009682 · <a href="https://www.google.com/maps/search/?api=1&query=Palestra%20Montello%20Via%20Montello%20s.n.c.%20MERATE%20LC" target="_blank" rel="noopener">Palestra Montello, MERATE</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">Palestra Montello · Via Montello s.n.c., MERATE (LC)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">sab 30 gen<small>ore 15:00</small></div>
+    <div class="d">sab 30 gen<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 15:00</small></div>
     <div class="teams">
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
       <div class=""><span class="n">A.B.A. Legnano</span><span class="p"></span></div>
     </div><span class="badge S">15:00</span>
     <div class="meta"><span class="tag U13G">U13 Gold</span> 6ª ritorno · gara 009689 · <a href="https://www.google.com/maps/search/?api=1&query=PALAZZETTO%20A.%20MORO%20Via%20San%20Pietro%201%20DESIO%20MB" target="_blank" rel="noopener">PALAZZETTO A. MORO, DESIO</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">PALAZZETTO A. MORO · Via San Pietro 1, DESIO (MB)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">dom 7 feb<small>ore 11:45</small></div>
+    <div class="d">dom 7 feb<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 11:45</small></div>
     <div class="teams">
       <div class=""><span class="n">Pall. Monza Forti e Liberi</span><span class="p"></span></div>
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
     </div><span class="badge S">11:45</span>
     <div class="meta"><span class="tag U13G">U13 Gold</span> 7ª ritorno · gara 009692 · <a href="https://www.google.com/maps/search/?api=1&query=PalaFORTI%20V.le%20C.%20Battisti%2030%20MONZA%20MB" target="_blank" rel="noopener">PalaFORTI, MONZA</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">PalaFORTI · V.le C. Battisti 30, MONZA (MB)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">sab 13 feb<small>ore 15:00</small></div>
+    <div class="d">sab 13 feb<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 15:00</small></div>
     <div class="teams">
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
       <div class=""><span class="n">Social O.S.A. Milano</span><span class="p"></span></div>
     </div><span class="badge S">15:00</span>
     <div class="meta"><span class="tag U13G">U13 Gold</span> 8ª ritorno · gara 009700 · <a href="https://www.google.com/maps/search/?api=1&query=PALAZZETTO%20A.%20MORO%20Via%20San%20Pietro%201%20DESIO%20MB" target="_blank" rel="noopener">PALAZZETTO A. MORO, DESIO</a></div>
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">PALAZZETTO A. MORO · Via San Pietro 1, DESIO (MB)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
   </div><div class="row">
-    <div class="d">sab 20 feb<small>ore 15:00</small></div>
+    <div class="d">sab 20 feb<small><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span>ore 15:00</small></div>
     <div class="teams">
       <div class=""><span class="n">Virtus Pall. Cermenate</span><span class="p"></span></div>
       <div class=""><span class="n me">Rimadesio Aurora</span><span class="p"></span></div>
     </div><span class="badge S">15:00</span>
     <div class="meta"><span class="tag U13G">U13 Gold</span> 9ª ritorno · gara 009703 · <a href="https://www.google.com/maps/search/?api=1&query=Palestra%20'R.%20Malacarne'%20Via%20Montale%201%20CERMENATE%20CO" target="_blank" rel="noopener">Palestra &#39;R. Malacarne&#39;, CERMENATE</a></div>
-  </div></div><h2>Esporta per Excel</h2><div class="card">
+    <details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b"><p class="minfo-st"><span class="sdot" style="background:#525252" title="Gara non ancora designata" role="img" aria-label="Gara non ancora designata"></span> Gara non ancora designata</p>
+    <p class="minfo-st">Palestra &#39;R. Malacarne&#39; · Via Montale 1, CERMENATE (CO)</p><p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p></div></details>
+  </div></div><div class="slegend"><span><span class="sdot" style="background:#525252"></span>Gara non ancora designata</span><span><span class="sdot" style="background:#37ed00"></span>Gara designata</span><span><span class="sdot" style="background:#fff500"></span>Risultato ufficioso</span><span><span class="sdot" style="background:#00ffff"></span>Omologazione sospesa</span><span>Nessun bollino: omologata</span></div><h2>Esporta per Excel</h2><div class="card">
     <div class="controls" style="margin:0">
       <div class="seg" role="group" aria-label="Partite da esportare">
         <button type="button" data-exp="next" aria-pressed="true">Da oggi</button>
@@ -465,12 +567,12 @@ tr.sep td{border-top:2px solid var(--line)}
     <div class="seg" role="group" aria-label="Vista"><button type="button" data-view="cls" aria-pressed="true">Classifica</button><button type="button" data-view="cal" aria-pressed="false">Calendario</button></div>
   </div><div class="tablebox"><table>
     <thead><tr><th>#</th><th class="tm">Squadra</th><th>Pt</th><th>G</th><th>V</th><th>P</th><th>PF</th><th>PS</th><th title="Quoziente canestri: punti fatti diviso punti subiti">Quoz.</th><th>Forma</th></tr></thead>
-    <tbody><tr class="  "><td class="pos">1</td><td class="tm">Pallacanestro Cantu&#39;</td><td class="pt">4</td><td>2</td><td>2</td><td>0</td><td>161</td><td>119</td><td>1,353</td><td><span class="form"><i class="V" title="Vinta"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">2</td><td class="tm">Pall. Bernareggio 99</td><td class="pt">4</td><td>2</td><td>2</td><td>0</td><td>119</td><td>94</td><td>1,266</td><td><span class="form"><i class="V" title="Vinta"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">3</td><td class="tm">Social O.S.A. Milano</td><td class="pt">4</td><td>2</td><td>2</td><td>0</td><td>124</td><td>108</td><td>1,148</td><td><span class="form"><i class="V" title="Vinta"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="aur  "><td class="pos">4</td><td class="tm">Rimadesio Aurora</td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>151</td><td>134</td><td>1,127</td><td><span class="form"><i class="V" title="Vinta"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">5</td><td class="tm">Pall. Monza Forti e Liberi</td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>129</td><td>119</td><td>1,084</td><td><span class="form"><i class="V" title="Vinta"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">6</td><td class="tm">Urania Milano</td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>111</td><td>136</td><td>0,816</td><td><span class="form"><i class="P" title="Persa"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">7</td><td class="tm">Fanaiman Basket Costa</td><td class="pt">0</td><td>2</td><td>0</td><td>2</td><td>114</td><td>134</td><td>0,851</td><td><span class="form"><i class="P" title="Persa"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">8</td><td class="tm">A.B.A. Legnano</td><td class="pt">0</td><td>2</td><td>0</td><td>2</td><td>102</td><td>120</td><td>0,850</td><td><span class="form"><i class="P" title="Persa"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">9</td><td class="tm">Rhinos Robbiate</td><td class="pt">0</td><td>1</td><td>0</td><td>1</td><td>50</td><td>75</td><td>0,667</td><td><span class="form"><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">10</td><td class="tm">Virtus Pall. Cermenate</td><td class="pt">0</td><td>1</td><td>0</td><td>1</td><td>41</td><td>63</td><td>0,651</td><td><span class="form"><i class="P" title="Persa"></i></span></td></tr></tbody>
-  </table></div><p class="note">2 punti a vittoria. A pari punti conta il quoziente canestri (punti fatti diviso punti subiti), poi i punti fatti. Include risultati ufficiosi non ancora omologati. <a href="https://fip.it/risultati/?group=campionati-regionali&regione_codice=LO&comitato_codice=RLO&sesso=M&codice_campionato=U13G/M&codice_fase=1&codice_girone=85667" target="_blank" rel="noopener">Girone B su fip.it</a></p></section>
+    <tbody><tr class="  "><td class="pos">1</td><td class="tm">Pallacanestro Cantu&#39;</td><td class="pt">4</td><td>2</td><td>2</td><td>0</td><td>161</td><td>119</td><td>1,353</td><td><span class="form"><i class="V" title="Vinta"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">2</td><td class="tm">Pall. Bernareggio 99</td><td class="pt">4</td><td>2</td><td>2</td><td>0</td><td>119</td><td>94</td><td>1,266</td><td><span class="form"><i class="V" title="Vinta"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">3</td><td class="tm">Social O.S.A. Milano</td><td class="pt">4</td><td>2</td><td>2</td><td>0</td><td>124</td><td>108</td><td>1,148</td><td><span class="form"><i class="V" title="Vinta"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="aur  "><td class="pos">4</td><td class="tm">Rimadesio Aurora</td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>151</td><td>134</td><td>1,127</td><td><span class="form"><i class="V" title="Vinta"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">5</td><td class="tm">Pall. Monza Forti e Liberi</td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>75</td><td>70</td><td>1,071</td><td><span class="form"><i class="V" title="Vinta"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">6</td><td class="tm">Virtus Pall. Cermenate</td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>108</td><td>126</td><td>0,857</td><td><span class="form"><i class="P" title="Persa"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">7</td><td class="tm">Urania Milano</td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>62</td><td>82</td><td>0,756</td><td><span class="form"><i class="P" title="Persa"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">8</td><td class="tm">Fanaiman Basket Costa</td><td class="pt">0</td><td>2</td><td>0</td><td>2</td><td>114</td><td>134</td><td>0,851</td><td><span class="form"><i class="P" title="Persa"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">9</td><td class="tm">A.B.A. Legnano</td><td class="pt">0</td><td>2</td><td>0</td><td>2</td><td>102</td><td>120</td><td>0,850</td><td><span class="form"><i class="P" title="Persa"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">10</td><td class="tm">Rhinos Robbiate</td><td class="pt">0</td><td>2</td><td>0</td><td>2</td><td>113</td><td>142</td><td>0,796</td><td><span class="form"><i class="P" title="Persa"></i><i class="P" title="Persa"></i></span></td></tr></tbody>
+  </table></div><p class="note">2 punti a vittoria. A pari punti conta il quoziente canestri (punti fatti diviso punti subiti), poi i punti fatti. <a href="https://fip.it/risultati/?group=campionati-regionali&regione_codice=LO&comitato_codice=RLO&sesso=M&codice_campionato=U13G/M&codice_fase=1&codice_girone=85667" target="_blank" rel="noopener">Girone B su fip.it</a></p></section>
     <section class="panel" id="p-gen" data-static><h2>Classifica generale avulsa U13 Gold</h2>
     <div class="tablebox"><table>
     <thead><tr><th>#</th><th class="tm">Squadra</th><th style="text-align:center">Gir.</th><th>Pt</th><th>G</th><th>V</th><th>P</th><th>PF</th><th>PS</th><th title="Quoziente canestri: punti fatti diviso punti subiti">Quoz.</th><th>Forma</th></tr></thead>
-    <tbody><tr class="  "><td class="pos">1</td><td class="tm">Libertas Cernusco</td><td class="gr"><span class="gpill">1° C</span></td><td class="pt">4</td><td>2</td><td>2</td><td>0</td><td>170</td><td>78</td><td>2,179</td><td><span class="form"><i class="V" title="Vinta"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">2</td><td class="tm">DBMC SA Varese Academy Arcisat</td><td class="gr"><span class="gpill">1° A</span></td><td class="pt">4</td><td>2</td><td>2</td><td>0</td><td>155</td><td>105</td><td>1,476</td><td><span class="form"><i class="V" title="Vinta"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">3</td><td class="tm">Pallacanestro Cantu&#39;</td><td class="gr"><span class="gpill">1° B</span></td><td class="pt">4</td><td>2</td><td>2</td><td>0</td><td>161</td><td>119</td><td>1,353</td><td><span class="form"><i class="V" title="Vinta"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  sep"><td class="pos">4</td><td class="tm">Armani Olimpia Milano</td><td class="gr"><span class="gpill">2° A</span></td><td class="pt">4</td><td>2</td><td>2</td><td>0</td><td>195</td><td>133</td><td>1,466</td><td><span class="form"><i class="V" title="Vinta"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">5</td><td class="tm">Pall. Bernareggio 99</td><td class="gr"><span class="gpill">2° B</span></td><td class="pt">4</td><td>2</td><td>2</td><td>0</td><td>119</td><td>94</td><td>1,266</td><td><span class="form"><i class="V" title="Vinta"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">6</td><td class="tm">Brescia Academy</td><td class="gr"><span class="gpill">2° C</span></td><td class="pt">2</td><td>1</td><td>1</td><td>0</td><td>81</td><td>44</td><td>1,841</td><td><span class="form"><i class="V" title="Vinta"></i></span></td></tr><tr class="  sep"><td class="pos">7</td><td class="tm">Social O.S.A. Milano</td><td class="gr"><span class="gpill">3° B</span></td><td class="pt">4</td><td>2</td><td>2</td><td>0</td><td>124</td><td>108</td><td>1,148</td><td><span class="form"><i class="V" title="Vinta"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">8</td><td class="tm">BK Club Cavenago Brianza</td><td class="gr"><span class="gpill">3° C</span></td><td class="pt">2</td><td>1</td><td>1</td><td>0</td><td>73</td><td>47</td><td>1,553</td><td><span class="form"><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">9</td><td class="tm">Oscom Milano3 Basiglio</td><td class="gr"><span class="gpill">3° A</span></td><td class="pt">2</td><td>1</td><td>1</td><td>0</td><td>60</td><td>55</td><td>1,091</td><td><span class="form"><i class="V" title="Vinta"></i></span></td></tr><tr class="  sep"><td class="pos">10</td><td class="tm">Novella Sentieri Pall. Orzinuo</td><td class="gr"><span class="gpill">4° C</span></td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>159</td><td>110</td><td>1,445</td><td><span class="form"><i class="V" title="Vinta"></i><i class="P" title="Persa"></i></span></td></tr><tr class="aur  "><td class="pos">11</td><td class="tm">Rimadesio Aurora</td><td class="gr"><span class="gpill">4° B</span></td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>151</td><td>134</td><td>1,127</td><td><span class="form"><i class="V" title="Vinta"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">12</td><td class="tm">Robur et Fides Varese</td><td class="gr"><span class="gpill">4° A</span></td><td class="pt">2</td><td>1</td><td>1</td><td>0</td><td>61</td><td>58</td><td>1,052</td><td><span class="form"><i class="V" title="Vinta"></i></span></td></tr><tr class="  sep"><td class="pos">13</td><td class="tm">Pol. Brembate Sopra</td><td class="gr"><span class="gpill">5° C</span></td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>147</td><td>106</td><td>1,387</td><td><span class="form"><i class="P" title="Persa"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">14</td><td class="tm">Pall. Monza Forti e Liberi</td><td class="gr"><span class="gpill">5° B</span></td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>129</td><td>119</td><td>1,084</td><td><span class="form"><i class="V" title="Vinta"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">15</td><td class="tm">HUB del Sempione</td><td class="gr"><span class="gpill">5° A</span></td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>148</td><td>143</td><td>1,035</td><td><span class="form"><i class="P" title="Persa"></i><i class="V" title="Vinta"></i></span></td></tr><tr class=" cut sep"><td class="pos">16</td><td class="tm">Varese Basket School</td><td class="gr"><span class="gpill">6° A</span></td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>174</td><td>184</td><td>0,946</td><td><span class="form"><i class="P" title="Persa"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">17</td><td class="tm">Urania Milano</td><td class="gr"><span class="gpill">6° B</span></td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>111</td><td>136</td><td>0,816</td><td><span class="form"><i class="P" title="Persa"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">18</td><td class="tm">Seriana BK 75</td><td class="gr"><span class="gpill">6° C</span></td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>93</td><td>126</td><td>0,738</td><td><span class="form"><i class="P" title="Persa"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  sep"><td class="pos">19</td><td class="tm">Basket Academy Ticino Lonate</td><td class="gr"><span class="gpill">7° A</span></td><td class="pt">0</td><td>1</td><td>0</td><td>1</td><td>83</td><td>93</td><td>0,892</td><td><span class="form"><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">20</td><td class="tm">Fanaiman Basket Costa</td><td class="gr"><span class="gpill">7° B</span></td><td class="pt">0</td><td>2</td><td>0</td><td>2</td><td>114</td><td>134</td><td>0,851</td><td><span class="form"><i class="P" title="Persa"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">21</td><td class="tm">Caluschese Basket</td><td class="gr"><span class="gpill">7° C</span></td><td class="pt">0</td><td>2</td><td>0</td><td>2</td><td>97</td><td>152</td><td>0,638</td><td><span class="form"><i class="P" title="Persa"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  sep"><td class="pos">22</td><td class="tm">A.B.A. Legnano</td><td class="gr"><span class="gpill">8° B</span></td><td class="pt">0</td><td>2</td><td>0</td><td>2</td><td>102</td><td>120</td><td>0,850</td><td><span class="form"><i class="P" title="Persa"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">23</td><td class="tm">Virtus Binasco</td><td class="gr"><span class="gpill">8° A</span></td><td class="pt">0</td><td>2</td><td>0</td><td>2</td><td>111</td><td>143</td><td>0,776</td><td><span class="form"><i class="P" title="Persa"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">24</td><td class="tm">Visconti Brignano</td><td class="gr"><span class="gpill">8° C</span></td><td class="pt">0</td><td>1</td><td>0</td><td>1</td><td>33</td><td>100</td><td>0,330</td><td><span class="form"><i class="P" title="Persa"></i></span></td></tr><tr class="  sep"><td class="pos">25</td><td class="tm">C.A.T. Vigevano</td><td class="gr"><span class="gpill">9° A</span></td><td class="pt">0</td><td>2</td><td>0</td><td>2</td><td>124</td><td>161</td><td>0,770</td><td><span class="form"><i class="P" title="Persa"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">26</td><td class="tm">Rhinos Robbiate</td><td class="gr"><span class="gpill">9° B</span></td><td class="pt">0</td><td>1</td><td>0</td><td>1</td><td>50</td><td>75</td><td>0,667</td><td><span class="form"><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">27</td><td class="tm">JU.VI. Cremona Basket 1952</td><td class="gr"><span class="gpill">9° C</span></td><td class="pt">0</td><td>1</td><td>0</td><td>1</td><td>22</td><td>112</td><td>0,196</td><td><span class="form"><i class="P" title="Persa"></i></span></td></tr><tr class="  sep"><td class="pos">28</td><td class="tm">Virtus Pall. Cermenate</td><td class="gr"><span class="gpill">10° B</span></td><td class="pt">0</td><td>1</td><td>0</td><td>1</td><td>41</td><td>63</td><td>0,651</td><td><span class="form"><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">29</td><td class="tm">CBC Basketschool Corbetta</td><td class="gr"><span class="gpill">10° A</span></td><td class="pt">0</td><td>1</td><td>0</td><td>1</td><td>53</td><td>89</td><td>0,596</td><td><span class="form"><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">30</td><td class="tm">Future Basket Lodigiano</td><td class="gr"><span class="gpill">10° C</span></td><td class="pt">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>—</td><td><span class="form"></span></td></tr></tbody>
+    <tbody><tr class="  "><td class="pos">1</td><td class="tm">Libertas Cernusco</td><td class="gr"><span class="gpill">1° C</span></td><td class="pt">4</td><td>2</td><td>2</td><td>0</td><td>170</td><td>78</td><td>2,179</td><td><span class="form"><i class="V" title="Vinta"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">2</td><td class="tm">DBMC SA Varese Academy Arcisat</td><td class="gr"><span class="gpill">1° A</span></td><td class="pt">4</td><td>2</td><td>2</td><td>0</td><td>155</td><td>105</td><td>1,476</td><td><span class="form"><i class="V" title="Vinta"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">3</td><td class="tm">Pallacanestro Cantu&#39;</td><td class="gr"><span class="gpill">1° B</span></td><td class="pt">4</td><td>2</td><td>2</td><td>0</td><td>161</td><td>119</td><td>1,353</td><td><span class="form"><i class="V" title="Vinta"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  sep"><td class="pos">4</td><td class="tm">Armani Olimpia Milano</td><td class="gr"><span class="gpill">2° A</span></td><td class="pt">4</td><td>2</td><td>2</td><td>0</td><td>195</td><td>133</td><td>1,466</td><td><span class="form"><i class="V" title="Vinta"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">5</td><td class="tm">Pall. Bernareggio 99</td><td class="gr"><span class="gpill">2° B</span></td><td class="pt">4</td><td>2</td><td>2</td><td>0</td><td>119</td><td>94</td><td>1,266</td><td><span class="form"><i class="V" title="Vinta"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">6</td><td class="tm">Brescia Academy</td><td class="gr"><span class="gpill">2° C</span></td><td class="pt">2</td><td>1</td><td>1</td><td>0</td><td>81</td><td>44</td><td>1,841</td><td><span class="form"><i class="V" title="Vinta"></i></span></td></tr><tr class="  sep"><td class="pos">7</td><td class="tm">Social O.S.A. Milano</td><td class="gr"><span class="gpill">3° B</span></td><td class="pt">4</td><td>2</td><td>2</td><td>0</td><td>124</td><td>108</td><td>1,148</td><td><span class="form"><i class="V" title="Vinta"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">8</td><td class="tm">BK Club Cavenago Brianza</td><td class="gr"><span class="gpill">3° C</span></td><td class="pt">2</td><td>1</td><td>1</td><td>0</td><td>73</td><td>47</td><td>1,553</td><td><span class="form"><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">9</td><td class="tm">Oscom Milano3 Basiglio</td><td class="gr"><span class="gpill">3° A</span></td><td class="pt">2</td><td>1</td><td>1</td><td>0</td><td>60</td><td>55</td><td>1,091</td><td><span class="form"><i class="V" title="Vinta"></i></span></td></tr><tr class="  sep"><td class="pos">10</td><td class="tm">Novella Sentieri Pall. Orzinuo</td><td class="gr"><span class="gpill">4° C</span></td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>159</td><td>110</td><td>1,445</td><td><span class="form"><i class="V" title="Vinta"></i><i class="P" title="Persa"></i></span></td></tr><tr class="aur  "><td class="pos">11</td><td class="tm">Rimadesio Aurora</td><td class="gr"><span class="gpill">4° B</span></td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>151</td><td>134</td><td>1,127</td><td><span class="form"><i class="V" title="Vinta"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">12</td><td class="tm">Robur et Fides Varese</td><td class="gr"><span class="gpill">4° A</span></td><td class="pt">2</td><td>1</td><td>1</td><td>0</td><td>61</td><td>58</td><td>1,052</td><td><span class="form"><i class="V" title="Vinta"></i></span></td></tr><tr class="  sep"><td class="pos">13</td><td class="tm">Pol. Brembate Sopra</td><td class="gr"><span class="gpill">5° C</span></td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>147</td><td>106</td><td>1,387</td><td><span class="form"><i class="P" title="Persa"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">14</td><td class="tm">Pall. Monza Forti e Liberi</td><td class="gr"><span class="gpill">5° B</span></td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>75</td><td>70</td><td>1,071</td><td><span class="form"><i class="V" title="Vinta"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">15</td><td class="tm">HUB del Sempione</td><td class="gr"><span class="gpill">5° A</span></td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>148</td><td>143</td><td>1,035</td><td><span class="form"><i class="P" title="Persa"></i><i class="V" title="Vinta"></i></span></td></tr><tr class=" cut sep"><td class="pos">16</td><td class="tm">Varese Basket School</td><td class="gr"><span class="gpill">6° A</span></td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>174</td><td>184</td><td>0,946</td><td><span class="form"><i class="P" title="Persa"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">17</td><td class="tm">Virtus Pall. Cermenate</td><td class="gr"><span class="gpill">6° B</span></td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>108</td><td>126</td><td>0,857</td><td><span class="form"><i class="P" title="Persa"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">18</td><td class="tm">Seriana BK 75</td><td class="gr"><span class="gpill">6° C</span></td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>93</td><td>126</td><td>0,738</td><td><span class="form"><i class="P" title="Persa"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  sep"><td class="pos">19</td><td class="tm">Urania Milano</td><td class="gr"><span class="gpill">7° B</span></td><td class="pt">2</td><td>2</td><td>1</td><td>1</td><td>62</td><td>82</td><td>0,756</td><td><span class="form"><i class="P" title="Persa"></i><i class="V" title="Vinta"></i></span></td></tr><tr class="  "><td class="pos">20</td><td class="tm">Basket Academy Ticino Lonate</td><td class="gr"><span class="gpill">7° A</span></td><td class="pt">0</td><td>1</td><td>0</td><td>1</td><td>83</td><td>93</td><td>0,892</td><td><span class="form"><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">21</td><td class="tm">Caluschese Basket</td><td class="gr"><span class="gpill">7° C</span></td><td class="pt">0</td><td>2</td><td>0</td><td>2</td><td>97</td><td>152</td><td>0,638</td><td><span class="form"><i class="P" title="Persa"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  sep"><td class="pos">22</td><td class="tm">Fanaiman Basket Costa</td><td class="gr"><span class="gpill">8° B</span></td><td class="pt">0</td><td>2</td><td>0</td><td>2</td><td>114</td><td>134</td><td>0,851</td><td><span class="form"><i class="P" title="Persa"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">23</td><td class="tm">Virtus Binasco</td><td class="gr"><span class="gpill">8° A</span></td><td class="pt">0</td><td>2</td><td>0</td><td>2</td><td>111</td><td>143</td><td>0,776</td><td><span class="form"><i class="P" title="Persa"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">24</td><td class="tm">Visconti Brignano</td><td class="gr"><span class="gpill">8° C</span></td><td class="pt">0</td><td>1</td><td>0</td><td>1</td><td>33</td><td>100</td><td>0,330</td><td><span class="form"><i class="P" title="Persa"></i></span></td></tr><tr class="  sep"><td class="pos">25</td><td class="tm">A.B.A. Legnano</td><td class="gr"><span class="gpill">9° B</span></td><td class="pt">0</td><td>2</td><td>0</td><td>2</td><td>102</td><td>120</td><td>0,850</td><td><span class="form"><i class="P" title="Persa"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">26</td><td class="tm">C.A.T. Vigevano</td><td class="gr"><span class="gpill">9° A</span></td><td class="pt">0</td><td>2</td><td>0</td><td>2</td><td>124</td><td>161</td><td>0,770</td><td><span class="form"><i class="P" title="Persa"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">27</td><td class="tm">JU.VI. Cremona Basket 1952</td><td class="gr"><span class="gpill">9° C</span></td><td class="pt">0</td><td>1</td><td>0</td><td>1</td><td>22</td><td>112</td><td>0,196</td><td><span class="form"><i class="P" title="Persa"></i></span></td></tr><tr class="  sep"><td class="pos">28</td><td class="tm">Rhinos Robbiate</td><td class="gr"><span class="gpill">10° B</span></td><td class="pt">0</td><td>2</td><td>0</td><td>2</td><td>113</td><td>142</td><td>0,796</td><td><span class="form"><i class="P" title="Persa"></i><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">29</td><td class="tm">CBC Basketschool Corbetta</td><td class="gr"><span class="gpill">10° A</span></td><td class="pt">0</td><td>1</td><td>0</td><td>1</td><td>53</td><td>89</td><td>0,596</td><td><span class="form"><i class="P" title="Persa"></i></span></td></tr><tr class="  "><td class="pos">30</td><td class="tm">Future Basket Lodigiano</td><td class="gr"><span class="gpill">10° C</span></td><td class="pt">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>—</td><td><span class="form"></span></td></tr></tbody>
   </table></div>
     <div class="legend"><span><span class="zone gold">1–16</span> Tabellone Gold</span><span><span class="zone silver">17–30</span> Tabellone Silver</span></div>
     <p class="note">Le squadre sono ordinate per posizione nel proprio girone: ai posti 1–3 le prime dei tre gironi, ai posti 4–6 le seconde, e così via. A pari posizione decidono i punti in classifica, poi il quoziente canestri. Al 16° posto va la migliore delle tre seste. Alcune squadre hanno giocato meno partite, quindi a metà stagione il confronto tra gironi è solo indicativo.</p></section>
@@ -493,14 +595,14 @@ tr.sep td{border-top:2px solid var(--line)}
     <div class="bracket2">
       <div class="side left"><div class="side-h">Lato 1<small>teste di serie 1, 4, 5, 8</small></div>
       <div class="side-scroll"><div class="cols">
-        <div class="bcol"><h4>Ottavi</h4><div class="bm"><div class=""><span class="s">1</span><span class="nm">Urania Milano</span><span class="gpill g" title="Posizione generale 17">6° B</span></div><div class="bye"><span class="s">16</span><span class="nm">riposo</span><span></span></div></div><div class="bm"><div class=""><span class="s">8</span><span class="nm">Visconti Brignano</span><span class="gpill g" title="Posizione generale 24">8° C</span></div><div class=""><span class="s">9</span><span class="nm">C.A.T. Vigevano</span><span class="gpill g" title="Posizione generale 25">9° A</span></div></div><div class="bm"><div class=""><span class="s">5</span><span class="nm">Caluschese Basket</span><span class="gpill g" title="Posizione generale 21">7° C</span></div><div class=""><span class="s">12</span><span class="nm">Virtus Pall. Cermenate</span><span class="gpill g" title="Posizione generale 28">10° B</span></div></div><div class="bm"><div class=""><span class="s">4</span><span class="nm">Fanaiman Basket Costa</span><span class="gpill g" title="Posizione generale 20">7° B</span></div><div class=""><span class="s">13</span><span class="nm">CBC Basketschool Corbetta</span><span class="gpill g" title="Posizione generale 29">10° A</span></div></div></div>
+        <div class="bcol"><h4>Ottavi</h4><div class="bm"><div class=""><span class="s">1</span><span class="nm">Virtus Pall. Cermenate</span><span class="gpill g" title="Posizione generale 17">6° B</span></div><div class="bye"><span class="s">16</span><span class="nm">riposo</span><span></span></div></div><div class="bm"><div class=""><span class="s">8</span><span class="nm">Visconti Brignano</span><span class="gpill g" title="Posizione generale 24">8° C</span></div><div class=""><span class="s">9</span><span class="nm">A.B.A. Legnano</span><span class="gpill g" title="Posizione generale 25">9° B</span></div></div><div class="bm"><div class=""><span class="s">5</span><span class="nm">Caluschese Basket</span><span class="gpill g" title="Posizione generale 21">7° C</span></div><div class=""><span class="s">12</span><span class="nm">Rhinos Robbiate</span><span class="gpill g" title="Posizione generale 28">10° B</span></div></div><div class="bm"><div class=""><span class="s">4</span><span class="nm">Basket Academy Ticino Lonate</span><span class="gpill g" title="Posizione generale 20">7° A</span></div><div class=""><span class="s">13</span><span class="nm">CBC Basketschool Corbetta</span><span class="gpill g" title="Posizione generale 29">10° A</span></div></div></div>
         <div class="bcol"><h4>Quarti</h4><div class="bm tbd"><div>Vinc. 1/16</div><div>Vinc. 8/9</div></div><div class="bm tbd"><div>Vinc. 5/12</div><div>Vinc. 4/13</div></div></div>
         <div class="bcol"><h4>Semifinale 1</h4><div class="bm tbd"><div>Vinc. quarto 1</div><div>Vinc. quarto 2</div></div></div>
       </div></div></div>
       <div class="final"><h4>Finale</h4><div class="bm tbd"><div>Vinc. lato 1</div><div>Vinc. lato 2</div></div></div>
       <div class="side right"><div class="side-h">Lato 2<small>teste di serie 2, 3, 6, 7</small></div>
       <div class="side-scroll"><div class="cols">
-        <div class="bcol"><h4>Ottavi</h4><div class="bm"><div class=""><span class="s">3</span><span class="nm">Basket Academy Ticino Lonate</span><span class="gpill g" title="Posizione generale 19">7° A</span></div><div class=""><span class="s">14</span><span class="nm">Future Basket Lodigiano</span><span class="gpill g" title="Posizione generale 30">10° C</span></div></div><div class="bm"><div class=""><span class="s">6</span><span class="nm">A.B.A. Legnano</span><span class="gpill g" title="Posizione generale 22">8° B</span></div><div class=""><span class="s">11</span><span class="nm">JU.VI. Cremona Basket 1952</span><span class="gpill g" title="Posizione generale 27">9° C</span></div></div><div class="bm"><div class=""><span class="s">7</span><span class="nm">Virtus Binasco</span><span class="gpill g" title="Posizione generale 23">8° A</span></div><div class=""><span class="s">10</span><span class="nm">Rhinos Robbiate</span><span class="gpill g" title="Posizione generale 26">9° B</span></div></div><div class="bm"><div class=""><span class="s">2</span><span class="nm">Seriana BK 75</span><span class="gpill g" title="Posizione generale 18">6° C</span></div><div class="bye"><span class="s">15</span><span class="nm">riposo</span><span></span></div></div></div>
+        <div class="bcol"><h4>Ottavi</h4><div class="bm"><div class=""><span class="s">3</span><span class="nm">Urania Milano</span><span class="gpill g" title="Posizione generale 19">7° B</span></div><div class=""><span class="s">14</span><span class="nm">Future Basket Lodigiano</span><span class="gpill g" title="Posizione generale 30">10° C</span></div></div><div class="bm"><div class=""><span class="s">6</span><span class="nm">Fanaiman Basket Costa</span><span class="gpill g" title="Posizione generale 22">8° B</span></div><div class=""><span class="s">11</span><span class="nm">JU.VI. Cremona Basket 1952</span><span class="gpill g" title="Posizione generale 27">9° C</span></div></div><div class="bm"><div class=""><span class="s">7</span><span class="nm">Virtus Binasco</span><span class="gpill g" title="Posizione generale 23">8° A</span></div><div class=""><span class="s">10</span><span class="nm">C.A.T. Vigevano</span><span class="gpill g" title="Posizione generale 26">9° A</span></div></div><div class="bm"><div class=""><span class="s">2</span><span class="nm">Seriana BK 75</span><span class="gpill g" title="Posizione generale 18">6° C</span></div><div class="bye"><span class="s">15</span><span class="nm">riposo</span><span></span></div></div></div>
         <div class="bcol"><h4>Quarti</h4><div class="bm tbd"><div>Vinc. 3/14</div><div>Vinc. 6/11</div></div><div class="bm tbd"><div>Vinc. 7/10</div><div>Vinc. 2/15</div></div></div>
         <div class="bcol"><h4>Semifinale 2</h4><div class="bm tbd"><div>Vinc. quarto 3</div><div>Vinc. quarto 4</div></div></div>
       </div></div></div>
@@ -513,7 +615,7 @@ document.documentElement.classList.add('js');
 // Copie dei dati FIP salvate il 19/10/2026, usate quando la lettura live non è possibile
 const SNAP_B=[
 {g:1,ar:"andata",p:[["009620","2026-10-10","18:00","omologata","A.B.A. LEGNANO","SOCIAL O.S.A. MILANO",49,64,49,64,"PalaDante","Via M. D'azeglio 86","LEGNANO","MI"],["009621","2026-10-10","15:00","omologata","VIRTUS PALL. CERMENATE","PALL. BERNAREGGIO 99",41,63,41,63,"Palestra 'R. Malacarne'","Via Montale 1","CERMENATE","CO"],["009617","2026-10-11","17:30","omologata","PALL. MONZA FORTI E LIBERI","RHINOS ROBBIATE",75,50,75,50,"PalaFORTI","V.le C. Battisti 30","MONZA","MB"],["009618","2026-10-11","11:15","omologata","PALLACANESTRO CANTU'","URANIA MILANO",82,42,82,42,"Centro Sport. 'Toto Caimi'","Via Francesco Baracca 56","CANTU'","CO"],["009619","2026-10-11","19:00","omologata","Fanaiman BASKET COSTA","Rimadesio AURORA",55,74,55,74,"PALESTRA COMUNALE","Via Verdi s.n.c.","COSTA MASNAGA","LC"]]},
-{g:2,ar:"andata",p:[["009624","2026-10-17","16:50","designata","SOCIAL O.S.A. MILANO","Fanaiman BASKET COSTA",60,59,-1,-1,"Palapavoni","Via Benigno Crespi 30","MILANO","MI"],["009626","2026-10-17","18:30","designata","PALL. MONZA FORTI E LIBERI","URANIA MILANO",54,69,-1,-1,"PalaFORTI","V.le C. Battisti 30","MONZA","MB"],["009622","2026-10-18","18:30","designata","PALL. BERNAREGGIO 99","A.B.A. LEGNANO",56,53,-1,-1,"PALESTRA COMUNALE","Via Petrarca 1","BERNAREGGIO","MB"],["009623","2026-10-18","11:30","designata","Rimadesio AURORA","PALLACANESTRO CANTU'",77,79,-1,-1,"PALAZZETTO A. MORO","Via San Pietro 1","DESIO","MB"],["009625","2026-10-18","10:00","designata","RHINOS ROBBIATE","VIRTUS PALL. CERMENATE",-1,-1,-1,-1,"Palestra Montello","Via Montello s.n.c.","MERATE","LC"]]},
+{g:2,ar:"andata",p:[["009624","2026-10-17","16:50","omologata","SOCIAL O.S.A. MILANO","Fanaiman BASKET COSTA",60,59,60,59,"Palapavoni","Via Benigno Crespi 30","MILANO","MI"],["009626","2026-10-17","18:30","omologata","PALL. MONZA FORTI E LIBERI","URANIA MILANO",54,69,0,20,"PalaFORTI","V.le C. Battisti 30","MONZA","MB"],["009622","2026-10-18","18:30","omologata","PALL. BERNAREGGIO 99","A.B.A. LEGNANO",56,53,56,53,"PALESTRA COMUNALE","Via Petrarca 1","BERNAREGGIO","MB"],["009623","2026-10-18","11:30","omologata","Rimadesio AURORA","PALLACANESTRO CANTU'",77,79,77,79,"PALAZZETTO A. MORO","Via San Pietro 1","DESIO","MB"],["009625","2026-10-18","10:00","omologata","RHINOS ROBBIATE","VIRTUS PALL. CERMENATE",63,67,63,67,"Palestra Montello","Via Montello s.n.c.","MERATE","LC"]]},
 {g:3,ar:"andata",p:[["009630","2026-10-24","20:30","designata","URANIA MILANO","Rimadesio AURORA",-1,-1,-1,-1,"Palalido Secondaria","viale Elia s.n.c.","MILANO","MI"],["009631","2026-10-24","14:30","calendario","PALL. MONZA FORTI E LIBERI","SOCIAL O.S.A. MILANO",-1,-1,-1,-1,"PalaFORTI","V.le C. Battisti 30","MONZA","MB"],["009627","2026-10-25","17:00","designata","PALL. BERNAREGGIO 99","Fanaiman BASKET COSTA",-1,-1,-1,-1,"PALESTRA COMUNALE","Via Petrarca 1","BERNAREGGIO","MB"],["009628","2026-10-25","11:45","designata","A.B.A. LEGNANO","VIRTUS PALL. CERMENATE",-1,-1,-1,-1,"PalaDante","Via M. D'azeglio 86","LEGNANO","MI"],["009629","2026-10-25","15:00","designata","PALLACANESTRO CANTU'","RHINOS ROBBIATE",-1,-1,-1,-1,"Centro Sport. 'Toto Caimi'","Via Francesco Baracca 56","CANTU'","CO"]]},
 {g:4,ar:"andata",p:[["009634","2026-10-27","19:30","calendario","A.B.A. LEGNANO","PALLACANESTRO CANTU'",-1,-1,-1,-1,"KNIGHTS PALACE","Via Parma 77","LEGNANO","MI"],["009633","2026-10-29","19:15","calendario","PALL. BERNAREGGIO 99","Rimadesio AURORA",-1,-1,-1,-1,"PALESTRA COMUNALE","Via Petrarca 1","BERNAREGGIO","MB"],["009632","2026-10-31","15:00","calendario","VIRTUS PALL. CERMENATE","SOCIAL O.S.A. MILANO",-1,-1,-1,-1,"Palestra 'R. Malacarne'","Via Montale 1","CERMENATE","CO"],["009635","2026-10-31","14:00","calendario","PALL. MONZA FORTI E LIBERI","Fanaiman BASKET COSTA",-1,-1,-1,-1,"PalaFORTI","V.le C. Battisti 30","MONZA","MB"],["009636","2026-11-03","19:00","calendario","RHINOS ROBBIATE","URANIA MILANO",-1,-1,-1,-1,"Palestra Montello","Via Montello s.n.c.","MERATE","LC"]]},
 {g:5,ar:"andata",p:[["009638","2026-11-04","19:00","calendario","PALLACANESTRO CANTU'","PALL. MONZA FORTI E LIBERI",-1,-1,-1,-1,"Centro Sport. 'Toto Caimi'","Via Francesco Baracca 56","CANTU'","CO"],["009637","2026-11-07","15:00","calendario","Fanaiman BASKET COSTA","A.B.A. LEGNANO",-1,-1,-1,-1,"PALESTRA COMUNALE","Via Verdi s.n.c.","COSTA MASNAGA","LC"],["009639","2026-11-07","15:20","calendario","SOCIAL O.S.A. MILANO","PALL. BERNAREGGIO 99",-1,-1,-1,-1,"Palapavoni","Via Benigno Crespi 30","MILANO","MI"],["009640","2026-11-07","15:00","calendario","Rimadesio AURORA","RHINOS ROBBIATE",-1,-1,-1,-1,"PALAZZETTO A. MORO","Via San Pietro 1","DESIO","MB"],["009641","2026-11-08","18:00","calendario","URANIA MILANO","VIRTUS PALL. CERMENATE",-1,-1,-1,-1,"Palalido Secondaria","viale Elia s.n.c.","MILANO","MI"]]},
@@ -596,7 +698,7 @@ const CHAMPS={
 };
 const CH_LIST=Object.values(CHAMPS);
 const TEAM_KEY='AURORA';
-const SNAPSHOT_AT='2026-10-19T11:15:00+02:00';
+const SNAPSHOT_AT='2026-10-20T12:30:00+02:00';
 const GOLD_SPOTS=16, U14_CUT=3;
 // Tabellone tennistico a 16: ordine degli ottavi dall'alto in basso
 const SEED_PAIRS=[[1,16],[8,9],[5,12],[4,13],[3,14],[6,11],[7,10],[2,15]];
@@ -617,15 +719,21 @@ function pretty(n){
   }).join(' ').replace(/ E /g,' e ').replace(/ Et /g,' et ').replace(/ Del /g,' del ');
 }
 
+const OFFICIALS=[['primo_arbitro','1° Arbitro'],['secondo_arbitro','2° Arbitro'],['terzo_arbitro','3° Arbitro'],['segnapunti','Segnapunti'],['cronometrista','Cronometrista'],['addetto_24_secondi','24 secondi']];
 function mk(x,g,ar,gir,ch){
-  const pc=+x.punti_casa,po=+x.punti_ospite;
+  // Se la gara è omologata vale il punteggio omologato (può differire dal campo, es. vittoria a tavolino)
+  const uc=+x.punti_casa_uff,uo=+x.punti_ospite_uff,hasUff=x.stato_gara==='omologata'&&uc>=0&&uo>=0&&!(uc===0&&uo===0);
+  const fc=+x.punti_casa,fo=+x.punti_ospite;
+  const pc=hasUff?uc:fc,po=hasUff?uo:fo;
   const played=pc>=0&&po>=0&&!(pc===0&&po===0);
+  const field=hasUff&&fc>=0&&fo>=0&&(fc!==uc||fo!==uo)&&!(fc===0&&fo===0)?[fc,fo]:null;
+  const off=('cognome_primo_arbitro' in x)?OFFICIALS.map(([k,l])=>{const c=clean(x['cognome_'+k]);return [l,c?{c,n:clean(x['nome_'+k]),city:clean(x['citta_'+k]),pr:clean(x['provincia_'+k])}:null]}):null;
   return {n:x.numero_gara,dt:new Date(x.data_partita+'T'+(x.ora_partita||'00:00')+':00'),date:x.data_partita,time:x.ora_partita,stato:x.stato_gara,
-    home:clean(x.casa),away:clean(x.ospite),pc,po,played,official:played&&x.stato_gara==='omologata',g:+g,
+    home:clean(x.casa),away:clean(x.ospite),pc,po,played,field,off,official:played&&x.stato_gara==='omologata',g:+g,
     ar:String(ar).toLowerCase().startsWith('r')?'R':'A',gir,ch,
     campo:clean(x.campo_gioco),ind:clean(x.indirizzo_campo_gioco),citta:clean(x.citta_campo_gioco),prov:clean(x.provincia_campo_gioco)};
 }
-const fromSnap=(snap,gir,ch)=>snap.flatMap(r=>r.p.map(a=>mk({numero_gara:a[0],data_partita:a[1],ora_partita:a[2],stato_gara:a[3],casa:a[4],ospite:a[5],punti_casa:a[6],punti_ospite:a[7],campo_gioco:a[10],indirizzo_campo_gioco:a[11],citta_campo_gioco:a[12],provincia_campo_gioco:a[13]},r.g,r.ar,gir,ch)));
+const fromSnap=(snap,gir,ch)=>snap.flatMap(r=>r.p.map(a=>mk({numero_gara:a[0],data_partita:a[1],ora_partita:a[2],stato_gara:a[3],casa:a[4],ospite:a[5],punti_casa:a[6],punti_ospite:a[7],punti_casa_uff:a[8],punti_ospite_uff:a[9],campo_gioco:a[10],indirizzo_campo_gioco:a[11],citta_campo_gioco:a[12],provincia_campo_gioco:a[13]},r.g,r.ar,gir,ch)));
 const fromApi=(json,gir,ch)=>json.flatMap(r=>(r.partite||[]).map(x=>mk(x,r.giornata,r.andata_ritorno,gir,ch)));
 
 const DATA={},SRC={};
@@ -687,18 +795,46 @@ const resultFor=m=>{if(!m.played)return 'S';return (isMe(m.home)?m.pc>m.po:m.po>
 // Conflitto: un'altra partita Aurora nello stesso giorno
 function closeTo(m,list){return list.find(o=>o!==m&&o.date===m.date)}
 
+// Bollino di stato come su fip.it (gare omologate: nessun bollino)
+const STATUS={
+  'non-designata':['#525252','Gara non ancora designata'],
+  'designata-nonvisibile':['#ff7f00','Gara designata: la designazione non è ancora visibile'],
+  'designata':['#37ed00','Gara designata: la designazione è visibile'],
+  'ufficioso':['#fff500','Risultato ufficioso'],
+  'provvedimenti':['#ed0052','Gara omologata con provvedimenti disciplinari'],
+  'sospesa':['#00ffff','Omologazione sospesa']};
+function statusOf(m){
+  if(/sosp/i.test(m.stato))return 'sospesa';
+  if(m.official)return '';
+  if(m.played)return 'ufficioso';
+  if(m.stato==='designata')return 'designata';
+  return 'non-designata';
+}
+const dotHTML=m=>{const k=statusOf(m);return k?`<span class="sdot" style="background:${STATUS[k][0]}" title="${STATUS[k][1]}" role="img" aria-label="${STATUS[k][1]}"></span>`:''};
+const LEGEND_KEYS=['non-designata','designata','ufficioso','sospesa'];
+const legendHTML=()=>`<div class="slegend">${LEGEND_KEYS.map(k=>`<span><span class="sdot" style="background:${STATUS[k][0]}"></span>${STATUS[k][1].replace('Gara designata: la designazione è visibile','Gara designata')}</span>`).join('')}<span>Nessun bollino: omologata</span></div>`;
+function infoHTML(m){
+  const st=statusOf(m);
+  let body;
+  if(!m.off)body='<p class="info-empty">Ufficiali di gara disponibili quando la pagina legge i dati live da FIP.</p>';
+  else body=`<dl>${m.off.map(([l,o])=>`<div><dt>${l}</dt><dd>${o?`${esc(o.c)} ${esc(pretty(o.n))}${o.city?` <span>· ${esc(pretty(o.city))}${o.pr?' ('+esc(o.pr)+')':''}</span>`:''}`:'<span class="na">—</span>'}</dd></div>`).join('')}</dl>`;
+  return `<details class="minfo"><summary>Info gara</summary>
+    <div class="minfo-b">${st?`<p class="minfo-st">${dotHTML(m)} ${STATUS[st][1]}</p>`:''}${m.field?`<p class="minfo-st">Omologata ${m.pc}–${m.po}; in campo era finita ${m.field[0]}–${m.field[1]}.</p>`:''}
+    <p class="minfo-st">${esc(m.campo)} · ${esc(m.ind)}, ${esc(m.citta)} (${esc(m.prov)})</p>${body}</div></details>`;
+}
 function rowHTML(m,opts={}){
   const hw=m.played&&m.pc>m.po,aw=m.played&&m.po>m.pc,aur=isMe(m.home)||isMe(m.away);
   const badge=opts.badge?`<span class="badge ${resultFor(m)}">${m.played?resultFor(m):esc(m.time)}</span>`:(m.played?'<span></span>':`<span class="badge S">${esc(m.time)}</span>`);
   const nm=t=>`<span class="n${isMe(t)?' me':''}">${esc(pretty(t))}</span>`;
   const near=opts.near?closeTo(m,opts.near):null;
   return `<div class="row${aur&&!opts.badge?' aur':''}">
-    <div class="d">${fmtDay(m.dt)}<small>${m.played?(m.official?'Finale':'<span class="unoff">ufficioso</span>'):'ore '+esc(m.time)}</small></div>
+    <div class="d">${fmtDay(m.dt)}<small>${dotHTML(m)}${m.played?(m.official?(m.field?'A tavolino':'Finale'):'<span class="unoff">ufficioso</span>'):'ore '+esc(m.time)}</small></div>
     <div class="teams">
       <div class="${hw?'w':aw?'l':''}">${nm(m.home)}<span class="p">${m.played?m.pc:''}</span></div>
       <div class="${aw?'w':hw?'l':''}">${nm(m.away)}<span class="p">${m.played?m.po:''}</span></div>
     </div>${badge}
     <div class="meta">${opts.tag?tag(m.ch)+' ':''}${m.g}ª ${m.ar==='A'?'andata':'ritorno'} · gara ${esc(m.n)} · <a href="${mapUrl(m)}" target="_blank" rel="noopener">${esc(m.campo)}, ${esc(m.citta)}</a>${near&&!m.played?` <span class="dbl">2 partite nello stesso giorno</span>`:''}</div>
+    ${infoHTML(m)}
   </div>`;
 }
 
@@ -760,7 +896,7 @@ function renderAurora(gen){
   }
   html+='</div>';
   html+=`<h2>Risultati</h2><div class="list">${past.length?past.map(m=>rowHTML(m,{badge:true,tag:true})).join(''):'<div class="empty">Nessuna partita giocata.</div>'}</div>`;
-  html+=`<h2>Calendario</h2><div class="list">${upcoming.map(m=>rowHTML(m,{badge:true,tag:true,near:upcoming})).join('')||'<div class="empty">Nessuna partita in programma.</div>'}</div>`;
+  html+=`<h2>Calendario</h2><div class="list">${upcoming.map(m=>rowHTML(m,{badge:true,tag:true,near:upcoming})).join('')||'<div class="empty">Nessuna partita in programma.</div>'}</div>`+legendHTML();
   html+=exportHTML();
   document.getElementById('p-aurora').innerHTML=html;
   bindExport();
@@ -803,6 +939,7 @@ function renderGironi(){
       html+=`<div class="round"><h3>${list[0].g}ª ${list[0].ar==='A'?'andata':'ritorno'}<small>${fmtDay(first)}${first.toDateString()!==last.toDateString()?' – '+fmtDay(last):''}</small></h3>${sel.map(m=>rowHTML(m)).join('')}</div>`;
     });
     if(!any)html+='<div class="empty">Nessuna partita per questo filtro.</div>';
+    html+=legendHTML();
   }
   const el=document.getElementById('p-gironi');el.innerHTML=html;
   el.querySelectorAll('[data-gir]').forEach(b=>b.addEventListener('click',()=>{UI.gir=b.dataset.gir;UI.team='';renderGironi()}));
