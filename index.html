@@ -828,7 +828,7 @@ function rowHTML(m,opts={}){
   const nm=t=>`<span class="n${isMe(t)?' me':''}">${esc(pretty(t))}</span>`;
   const near=opts.near?closeTo(m,opts.near):null;
   return `<div class="row${aur&&!opts.badge?' aur':''}">
-    <div class="d">${fmtDay(m.dt)}<small>${dotHTML(m)}${m.played?(m.official?(m.field?'A tavolino':'Finale'):'<span class="unoff">ufficioso</span>'):'ore '+esc(m.time)}</small></div>
+    <div class="d">${fmtDay(m.dt)}<small>${dotHTML(m)}${m.played?(m.official?(m.field||(Math.min(m.pc,m.po)===0&&Math.max(m.pc,m.po)===20)?'A tavolino':'Finale'):'<span class="unoff">ufficioso</span>'):'ore '+esc(m.time)}</small></div>
     <div class="teams">
       <div class="${hw?'w':aw?'l':''}">${nm(m.home)}<span class="p">${m.played?m.pc:''}</span></div>
       <div class="${aw?'w':hw?'l':''}">${nm(m.away)}<span class="p">${m.played?m.po:''}</span></div>
