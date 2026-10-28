@@ -189,6 +189,18 @@ tr.sep td{border-top:2px solid var(--line)}
 .pigrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:10px}
 .champbar .seg button{padding:7px 11px}
 .dbl{font-weight:600;color:var(--loss)}
+.situ-note{font-size:12px;opacity:.85}
+/* Tre campionati affiancati con la stessa struttura */
+.nextgrid.g3{grid-template-columns:1fr}
+@media (min-width:760px){.nextgrid.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .g3 .next .when{font-size:17px}
+  .g3 .vs{grid-template-columns:1fr;gap:2px}
+  .g3 .vs .t{font-size:17px;overflow-wrap:normal;word-break:normal;hyphens:none}
+  .g3 .vs .t:last-child{text-align:left}
+  .g3 .vs .x{font-size:13px}
+  .g3 .path .big{font-size:28px}
+  .g3 .path{gap:8px 18px}}
+.g3 .card{align-content:start}
 .sdot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:0;box-shadow:0 0 0 1px rgba(0,0,0,.18)}
 .minfo{grid-column:1 / -1;border-top:1px dashed var(--line);margin-top:4px;padding-top:4px}
 .minfo summary{cursor:pointer;font-size:12.5px;font-weight:600;color:var(--muted);list-style:none;display:inline-flex;align-items:center;gap:4px}
@@ -225,16 +237,13 @@ tr.sep td{border-top:2px solid var(--line)}
       <div class="eyebrow">Stagione 2026/27 · U13 Gold · U14 Gold · U14 Regionale</div>
       <h1>Rimadesio <span>Aurora</span></h1>
     </div>
-    <div class="stats" id="stats">
-    <div class="sgroup"><div class="sgl">Under 13 Gold · girone B</div><div class="srow">
+    <div class="stats" id="stats"><div class="sgroup"><div class="sgl">Under 13 Gold · girone B</div><div class="srow">
       <div class="stat"><b>4°</b><small>Girone</small></div>
-      <div class="stat"><b>11°</b><small>Generale</small></div>
-      <div class="stat"><b>1–1</b><small>V–P</small></div></div></div>
-    <div class="sgroup"><div class="sgl">Under 14 Gold · girone A</div><div class="srow">
+      <div class="stat"><b>1–1</b><small>V–P</small></div>
+      <div class="stat"><b>2</b><small>Punti</small></div></div></div><div class="sgroup"><div class="sgl">Under 14 Gold · girone A</div><div class="srow">
       <div class="stat"><b>8°</b><small>Girone</small></div>
       <div class="stat"><b>1–3</b><small>V–P</small></div>
-      <div class="stat"><b>2</b><small>Punti</small></div></div></div>
-    <div class="sgroup"><div class="sgl">Under 14 Regionale · girone K</div><div class="srow">
+      <div class="stat"><b>2</b><small>Punti</small></div></div></div><div class="sgroup"><div class="sgl">Under 14 Regionale · girone K</div><div class="srow">
       <div class="stat"><b>3°</b><small>Girone</small></div>
       <div class="stat"><b>1–1</b><small>V–P</small></div>
       <div class="stat"><b>2</b><small>Punti</small></div></div></div></div>
@@ -253,7 +262,7 @@ tr.sep td{border-top:2px solid var(--line)}
   </div>
 
   <main>
-    <section class="panel" id="p-aurora" data-static><h2>Prossime partite</h2><div class="nextgrid"><div class="card next">
+    <section class="panel" id="p-aurora" data-static><h2>Prossime partite</h2><div class="nextgrid g3"><div class="card next">
       <div><div class="kicker"><span class="tag U13G">U13 Gold</span> Domani · in trasferta</div><div class="when">Giovedì 29 ott · ore 19:15</div></div>
       <div class="vs"><div class="t">Pall. Bernareggio 99</div><div class="x">vs</div><div class="t me">Rimadesio Aurora</div></div>
       <div class="venue">PALESTRA COMUNALE · Via Petrarca 1, BERNAREGGIO (MB) · <a href="https://www.google.com/maps/search/?api=1&query=PALESTRA%20COMUNALE%20Via%20Petrarca%201%20BERNAREGGIO%20MB" target="_blank" rel="noopener">Maps</a></div>
@@ -265,19 +274,22 @@ tr.sep td{border-top:2px solid var(--line)}
       <div><div class="kicker"><span class="tag U14R">U14 Reg.</span> Tra 11 giorni · in casa</div><div class="when">Domenica 8 nov · ore 16:30</div></div>
       <div class="vs"><div class="t me">Rimadesio Aurora</div><div class="x">vs</div><div class="t">Basket Seregno</div></div>
       <div class="venue">PALAZZETTO A. MORO · Via San Pietro 1, DESIO (MB) · <a href="https://www.google.com/maps/search/?api=1&query=PALAZZETTO%20A.%20MORO%20Via%20San%20Pietro%201%20DESIO%20MB" target="_blank" rel="noopener">Maps</a></div>
-    </div></div><h2>Situazione</h2><div class="nextgrid"><div class="card"><div class="kicker"><span class="tag U13G">U13 Gold</span> Verso le finali</div>
-      <div class="path"><div><span class="big">11°</span><small>Generale su 30</small></div>
-      <div><span class="big">4° B</span><small>Nel girone</small></div>
-      <div><span class="zone gold">Tabellone Gold</span></div></div>
-      <div class="venue">Se finisse oggi: ottavo contro <b>Brescia Academy</b> (2° girone C). Ultimo posto Gold: Varese Basket School, 2 punti.</div></div><div class="card"><div class="kicker"><span class="tag U14G">U14 Gold</span> Girone A</div>
-    <div class="path"><div><span class="big">8°</span><small>Su 12 squadre</small></div>
+    </div></div><h2>Situazione</h2><div class="nextgrid g3"><div class="card"><div class="kicker"><span class="tag U13G">U13 Gold</span> Girone B</div>
+    <div class="path"><div><span class="big">4°</span><small>Su 10</small></div>
+    <div><span class="big">1–1</span><small>V–P</small></div>
+    <div><span class="big">2</span><small>Punti</small></div></div>
+    <div><span class="zone gold">Tabellone Gold</span></div>
+    <div class="venue">11ª su 30 nella classifica generale. Se finisse oggi: ottavo contro <b>Brescia Academy</b> (2° girone C).</div></div><div class="card"><div class="kicker"><span class="tag U14G">U14 Gold</span> Girone A</div>
+    <div class="path"><div><span class="big">8°</span><small>Su 12</small></div>
     <div><span class="big">1–3</span><small>V–P</small></div>
-    <div><span class="zone silver">Play-in</span></div></div>
-    <div class="venue">Se finisse oggi: play-in in casa contro <b>S. Pio X Mantova</b>; chi vince entra nel tabellone come testa di serie 15. La 6ª, ultimo posto diretto nel tabellone, è Pallacanestro Cantu&#39; con 4 punti. Schema 2025/26, formula 2026/27 non ancora uscita.</div></div><div class="card"><div class="kicker"><span class="tag U14R">U14 Reg.</span> Prima fase · girone K</div>
-      <div class="path"><div><span class="big">3°</span><small>Su 6 squadre</small></div>
-      <div><span class="big">2</span><small>Punti</small></div>
-      <div><span class="zone gold">Prime 3</span></div></div>
-      <div class="venue">Margine sulla 4ª (Incanet BK Cesano Seveso): 0 punti. Nel 2025/26 le prime 3 di ogni girone andavano nella seconda fase Silver, le altre nella Bronze; la formula 2026/27 non è ancora uscita.</div></div></div><h2>Risultati</h2><div class="list"><div class="row">
+    <div><span class="big">2</span><small>Punti</small></div></div>
+    <div><span class="zone silver">Play-in</span></div>
+    <div class="venue">Se finisse oggi: play-in in casa contro <b>S. Pio X Mantova</b>; chi vince entra nel tabellone come testa di serie 15. La 6ª, ultimo posto diretto nel tabellone, è Pallacanestro Cantu&#39; con 4 punti.<br><span class="situ-note">Schema 2025/26, formula 2026/27 non ancora uscita.</span></div></div><div class="card"><div class="kicker"><span class="tag U14R">U14 Reg.</span> Girone K</div>
+    <div class="path"><div><span class="big">3°</span><small>Su 6</small></div>
+    <div><span class="big">1–1</span><small>V–P</small></div>
+    <div><span class="big">2</span><small>Punti</small></div></div>
+    <div><span class="zone gold">Verso il Silver</span></div>
+    <div class="venue">Margine sulla 4ª (Incanet BK Cesano Seveso): 0 punti.<br><span class="situ-note">Le prime 3 vanno nella seconda fase Silver (schema 2025/26, formula 2026/27 non ancora uscita).</span></div></div></div><h2>Risultati</h2><div class="list"><div class="row">
     <div class="d">dom 25 ott<small>Finale</small></div>
     <div class="teams">
       <div class="l"><span class="n me">Rimadesio Aurora</span><span class="p">57</span></div>
@@ -1079,22 +1091,12 @@ function rowHTML(m,opts={}){
 }
 
 function renderHeader(gen){
-  const me13=gen.find(s=>isMe(s.team));
-  const me14=standings('U14R','K').find(s=>isMe(s.team));
-  const me14g=standings('U14G','A').find(s=>isMe(s.team));
-  document.getElementById('stats').innerHTML=`
-    ${me13?`<div class="sgroup"><div class="sgl">${CHAMPS.U13G.long} · girone B</div><div class="srow">
-      <div class="stat"><b>${me13.rk}°</b><small>Girone</small></div>
-      <div class="stat"><b>${me13.ov}°</b><small>Generale</small></div>
-      <div class="stat"><b>${me13.v}–${me13.p}</b><small>V–P</small></div></div></div>`:''}
-    ${me14g?`<div class="sgroup"><div class="sgl">${CHAMPS.U14G.long} · girone A</div><div class="srow">
-      <div class="stat"><b>${me14g.rk}°</b><small>Girone</small></div>
-      <div class="stat"><b>${me14g.v}–${me14g.p}</b><small>V–P</small></div>
-      <div class="stat"><b>${me14g.pt}</b><small>Punti</small></div></div></div>`:''}
-    ${me14?`<div class="sgroup"><div class="sgl">${CHAMPS.U14R.long} · girone K</div><div class="srow">
-      <div class="stat"><b>${me14.rk}°</b><small>Girone</small></div>
-      <div class="stat"><b>${me14.v}–${me14.p}</b><small>V–P</small></div>
-      <div class="stat"><b>${me14.pt}</b><small>Punti</small></div></div></div>`:''}`;
+  document.getElementById('stats').innerHTML=CH_LIST.map(C=>{
+    const me=standings(C.id,C.my).find(s=>isMe(s.team));if(!me)return '';
+    return `<div class="sgroup"><div class="sgl">${C.long} · girone ${C.my}</div><div class="srow">
+      <div class="stat"><b>${me.rk}°</b><small>Girone</small></div>
+      <div class="stat"><b>${me.v}–${me.p}</b><small>V–P</small></div>
+      <div class="stat"><b>${me.pt}</b><small>Punti</small></div></div></div>`}).join('');
   const keys=Object.keys(SRC),lives=keys.filter(k=>SRC[k]);
   document.getElementById('refresh').hidden=TRIED&&lives.length===0;
   if(lives.length===keys.length)setSrc(`Dati live da FIP · letti alle ${fmtStamp(LIVE_AT)}`,true);
@@ -1108,7 +1110,7 @@ function renderAurora(gen){
   const mine=myMatches(),now=new Date();
   const upcoming=mine.filter(m=>!m.played&&m.dt>=new Date(now.getTime()-3*3600e3));
   const past=mine.filter(m=>m.played).reverse();
-  let html='<h2>Prossime partite</h2><div class="nextgrid">';
+  let html='<h2>Prossime partite</h2><div class="nextgrid g3">';
   CH_LIST.map(C=>C.id).forEach(ch=>{
     const nx=upcoming.find(m=>m.ch===ch);if(!nx)return;
     const days=Math.round((new Date(nx.date+'T00:00:00')-new Date(now.toDateString()))/864e5);
@@ -1120,27 +1122,8 @@ function renderAurora(gen){
     </div>`;
   });
   html+='</div>';
-  // Situazione nei due campionati
-  const me=gen.find(s=>isMe(s.team)),k=standings('U14R','K'),m14=k.find(s=>isMe(s.team));
-  html+='<h2>Situazione</h2><div class="nextgrid">';
-  if(me){
-    const gold=me.ov<=GOLD_SPOTS,opp=gold?bracketOpp(gen,me.ov):null,cut=gen[GOLD_SPOTS-1];
-    html+=`<div class="card"><div class="kicker">${tag('U13G')} Verso le finali</div>
-      <div class="path"><div><span class="big">${me.ov}°</span><small>Generale su ${gen.length}</small></div>
-      <div><span class="big">${me.rk}° B</span><small>Nel girone</small></div>
-      <div><span class="zone ${gold?'gold':'silver'}">${gold?'Tabellone Gold':'Tabellone Silver'}</span></div></div>
-      <div class="venue">${gold&&opp?`Se finisse oggi: ottavo contro <b>${esc(pretty(opp.team))}</b> (${opp.rk}° girone ${opp.gir}). `:''}${gold?`Ultimo posto Gold: ${esc(pretty(cut.team))}, ${cut.pt} punti.`:`Per il Gold serve superare ${esc(pretty(cut.team))} (${cut.pt} punti).`}</div></div>`;
-  }
-  html+=u14gAuroraCard();
-  if(m14){
-    const inTop=m14.rk<=U14_CUT,cut=k[U14_CUT-1],out=k[U14_CUT];
-    html+=`<div class="card"><div class="kicker">${tag('U14R')} Prima fase · girone K</div>
-      <div class="path"><div><span class="big">${m14.rk}°</span><small>Su ${k.length} squadre</small></div>
-      <div><span class="big">${m14.pt}</span><small>Punti</small></div>
-      <div><span class="zone ${inTop?'gold':'silver'}">${inTop?'Prime 3':'Fuori dalle prime 3'}</span></div></div>
-      <div class="venue">${inTop?`Margine sulla 4ª (${esc(pretty(out.team))}): ${m14.pt-out.pt} punti.`:`La 3ª è ${esc(pretty(cut.team))} con ${cut.pt} punti.`} Nel 2025/26 le prime 3 di ogni girone andavano nella seconda fase Silver, le altre nella Bronze; la formula 2026/27 non è ancora uscita.</div></div>`;
-  }
-  html+='</div>';
+  // Situazione: stessa scheda per ogni campionato (posizione, V–P, punti, zona, proiezione)
+  html+=`<h2>Situazione</h2><div class="nextgrid g3">${CH_LIST.map(C=>situCard(C,gen)).join('')}</div>`;
   html+=`<h2>Risultati</h2><div class="list">${past.length?past.map(m=>rowHTML(m,{badge:true,tag:true})).join(''):'<div class="empty">Nessuna partita giocata.</div>'}</div>`;
   html+=`<h2>Calendario</h2><div class="list">${upcoming.map(m=>rowHTML(m,{badge:true,tag:true,near:upcoming})).join('')||'<div class="empty">Nessuna partita in programma.</div>'}</div>`+legendHTML();
   html+=exportHTML();
@@ -1342,8 +1325,30 @@ function renderFinU14G(el){
     <h2>Tabellone Silver U14 · posti 17–24</h2>${u14gBracket(g,U14G_SILVER_LEFT,U14G_SILVER_RIGHT,['Quarti','Semifinale'],'Finale 17°–18°')}
     <p class="note">Teste di serie 17–20: le perdenti dei play-in; 21–24: le 11ª e 12ª dei due gironi. Quarti, semifinali e finali al meglio delle due partite.</p>`;
 }
-function u14gAuroraCard(){
-  const g=u14gGroups(),grp=g.xk==='A'?'X':'Y',list=grp==='X'?g.X:g.Y,me=list.find(s=>isMe(s.team));if(!me)return '';
+function situCard(C,gen){
+  const list=standings(C.id,C.my),me=list.find(s=>isMe(s.team));if(!me)return '';
+  let zone,line,note='';
+  if(C.id==='U13G'){
+    const m=gen.find(s=>isMe(s.team)),gold=m.ov<=GOLD_SPOTS,opp=gold?bracketOpp(gen,m.ov):null,cut=gen[GOLD_SPOTS-1];
+    zone=gold?['gold','Tabellone Gold']:['silver','Tabellone Silver'];
+    line=`${m.ov}ª su ${gen.length} nella classifica generale. `+(gold&&opp?`Se finisse oggi: ottavo contro <b>${esc(pretty(opp.team))}</b> (${opp.rk}° girone ${opp.gir}).`:`Per il Gold serve superare ${esc(pretty(cut.team))} (${cut.pt} punti).`);
+  }else if(C.id==='U14G'){
+    const r=u14gProjection();zone=r.zone;line=r.txt;note='Schema 2025/26, formula 2026/27 non ancora uscita.';
+  }else{
+    const inTop=me.rk<=U14_CUT,cut=list[U14_CUT-1],out=list[U14_CUT];
+    zone=inTop?['gold','Verso il Silver']:['silver','Verso il Bronze'];
+    line=inTop?`Margine sulla 4ª (${esc(pretty(out.team))}): ${me.pt-out.pt} punti.`:`La 3ª è ${esc(pretty(cut.team))} con ${cut.pt} punti.`;
+    note='Le prime 3 vanno nella seconda fase Silver (schema 2025/26, formula 2026/27 non ancora uscita).';
+  }
+  return `<div class="card"><div class="kicker">${tag(C.id)} Girone ${C.my}</div>
+    <div class="path"><div><span class="big">${me.rk}°</span><small>Su ${list.length}</small></div>
+    <div><span class="big">${me.v}–${me.p}</span><small>V–P</small></div>
+    <div><span class="big">${me.pt}</span><small>Punti</small></div></div>
+    <div><span class="zone ${zone[0]}">${zone[1]}</span></div>
+    <div class="venue">${line}${note?`<br><span class="situ-note">${note}</span>`:''}</div></div>`;
+}
+function u14gProjection(){
+  const g=u14gGroups(),grp=g.xk==='A'?'X':'Y',list=grp==='X'?g.X:g.Y,me=list.find(s=>isMe(s.team));if(!me)return {zone:['silver','—'],txt:''};
   let zone,txt;
   if(me.rk<=6){
     zone=['gold','Tabellone Gold'];
@@ -1358,11 +1363,8 @@ function u14gAuroraCard(){
     txt=`Se finisse oggi: play-in ${p.home[0]===grp&&p.home[1]===me.rk?'in casa':'in trasferta'} contro ${opp?`<b>${esc(pretty(opp.team))}</b>`:'—'}; chi vince entra nel tabellone come testa di serie ${p.seed}.`;
   }else{zone=['silver','Tabellone Silver'];txt='Se finisse oggi: tabellone Silver (posti 17–24).'}
   const six=list[5];
-  return `<div class="card"><div class="kicker">${tag('U14G')} Girone A</div>
-    <div class="path"><div><span class="big">${me.rk}°</span><small>Su ${list.length} squadre</small></div>
-    <div><span class="big">${me.v}–${me.p}</span><small>V–P</small></div>
-    <div><span class="zone ${zone[0]}">${zone[1]}</span></div></div>
-    <div class="venue">${txt} ${me.rk>6&&six?`La 6ª, ultimo posto diretto nel tabellone, è ${esc(pretty(six.team))} con ${six.pt} punti.`:''} Schema 2025/26, formula 2026/27 non ancora uscita.</div></div>`;
+  if(me.rk>6&&six)txt+=` La 6ª, ultimo posto diretto nel tabellone, è ${esc(pretty(six.team))} con ${six.pt} punti.`;
+  return {zone,txt};
 }
 
 function renderGen(gen){
