@@ -230,6 +230,39 @@ tr.sep td{border-top:2px solid var(--line)}
 .champbar>span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
 .glabel{font-family:var(--display);font-weight:700;font-size:18px;text-transform:uppercase;letter-spacing:.04em}
 :root:not(.js) .champbar{display:none}
+/* Telefono: intestazione compatta, schede campionato con prossima partita, classifiche essenziali */
+.nextm{border-top:1px solid var(--line);padding-top:10px;display:grid;gap:4px;font-size:14px}
+.nextm .nk{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700}
+.nextm .nv{font-weight:600}
+.nextm .nv .me{color:var(--me)}
+.more{margin-top:8px}
+.expbox>summary{cursor:pointer;font-family:var(--display);font-weight:700;font-size:20px;text-transform:uppercase;list-style:none;padding:6px 0}
+.expbox>summary::-webkit-details-marker{display:none}
+.expbox>summary::after{content:" ▸";font-size:15px}
+.expbox[open]>summary::after{content:" ▾"}
+.srow .mini{display:none}
+.sgl .sm{display:none}
+@media (max-width:640px){
+  .srow .stat small{display:none}
+  header.board{padding:12px 14px;gap:8px;border-radius:12px}
+  header.board .eyebrow{display:none}
+  .sgl .sm{display:inline}
+  h1{font-size:28px}
+  .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .sgroup{gap:2px}
+  .sgl{font-size:10.5px;letter-spacing:.04em;line-height:1.2}
+  .srow{gap:0 8px}
+  .srow .stat:not(:first-child){display:none}
+  .srow .stat b{font-size:24px}
+  .srow .mini{display:block;font-size:12px;opacity:.85}
+  .src{font-size:12px}
+  .xs{display:none}
+  table{min-width:0;font-size:14px}
+  .tablebox th,.tablebox td{padding-left:5px;padding-right:5px}
+  .tablebox th{font-size:11px}
+  td.tm{white-space:normal;line-height:1.2;min-width:110px}
+  td.pos{width:24px}
+}
 </style>
 
 <div class="wrap">
@@ -238,14 +271,14 @@ tr.sep td{border-top:2px solid var(--line)}
       <div class="eyebrow">Stagione 2026/27 · U13 Gold · U14 Gold · U14 Regionale</div>
       <h1>Rimadesio <span>Aurora</span></h1>
     </div>
-    <div class="stats" id="stats"><div class="sgroup"><div class="sgl">Under 13 Gold · girone B</div><div class="srow">
-      <div class="stat"><b>5°</b><small>Girone</small></div>
+    <div class="stats" id="stats"><div class="sgroup"><div class="sgl"><span class="xs">Under 13 Gold · girone </span><span class="sm">U13 Gold · B</span></div><div class="srow">
+      <div class="stat"><b>5°</b><small>Girone</small><span class="mini">1–1 · 2 pt</span></div>
       <div class="stat"><b>1–1</b><small>V–P</small></div>
-      <div class="stat"><b>2</b><small>Punti</small></div></div></div><div class="sgroup"><div class="sgl">Under 14 Gold · girone A</div><div class="srow">
-      <div class="stat"><b>9°</b><small>Girone</small></div>
+      <div class="stat"><b>2</b><small>Punti</small></div></div></div><div class="sgroup"><div class="sgl"><span class="xs">Under 14 Gold · girone </span><span class="sm">U14 Gold · A</span></div><div class="srow">
+      <div class="stat"><b>9°</b><small>Girone</small><span class="mini">1–3 · 2 pt</span></div>
       <div class="stat"><b>1–3</b><small>V–P</small></div>
-      <div class="stat"><b>2</b><small>Punti</small></div></div></div><div class="sgroup"><div class="sgl">Under 14 Regionale · girone K</div><div class="srow">
-      <div class="stat"><b>2°</b><small>Girone</small></div>
+      <div class="stat"><b>2</b><small>Punti</small></div></div></div><div class="sgroup"><div class="sgl"><span class="xs">Under 14 Regionale · girone </span><span class="sm">U14 Reg. · K</span></div><div class="srow">
+      <div class="stat"><b>2°</b><small>Girone</small><span class="mini">1–1 · 2 pt</span></div>
       <div class="stat"><b>1–1</b><small>V–P</small></div>
       <div class="stat"><b>2</b><small>Punti</small></div></div></div></div>
     <div class="src"><span class="dot" id="srcdot"></span><span id="srctext">Dati FIP salvati il 20/10 12:30</span><button class="refresh" id="refresh" type="button">Aggiorna</button></div>
@@ -1048,8 +1081,8 @@ function rowHTML(m,opts={}){
 function renderHeader(gen){
   document.getElementById('stats').innerHTML=CH_LIST.map(C=>{
     const me=standings(C.id,C.my).find(s=>isMe(s.team));if(!me)return '';
-    return `<div class="sgroup"><div class="sgl">${C.long} · girone ${C.my}</div><div class="srow">
-      <div class="stat"><b>${me.rk}°</b><small>Girone</small></div>
+    return `<div class="sgroup"><div class="sgl"><span class="xs">${C.long} · girone </span><span class="sm">${C.label} · ${C.my}</span></div><div class="srow">
+      <div class="stat"><b>${me.rk}°</b><small>Girone</small><span class="mini">${me.v}–${me.p} · ${me.pt} pt</span></div>
       <div class="stat"><b>${me.v}–${me.p}</b><small>V–P</small></div>
       <div class="stat"><b>${me.pt}</b><small>Punti</small></div></div></div>`}).join('');
   // SRC[girone] = ora dell'ultima lettura riuscita (false = mai letto, si usano i dati salvati)
@@ -1067,23 +1100,20 @@ function renderAurora(gen){
   const mine=myMatches(),now=new Date();
   const upcoming=mine.filter(m=>!m.played&&m.dt>=new Date(now.getTime()-3*3600e3));
   const past=mine.filter(m=>m.played).reverse();
-  let html='<h2>Prossime partite</h2><div class="nextgrid g3">';
-  CH_LIST.map(C=>C.id).forEach(ch=>{
-    const nx=upcoming.find(m=>m.ch===ch);if(!nx)return;
-    const days=Math.round((new Date(nx.date+'T00:00:00')-new Date(now.toDateString()))/864e5);
-    const cnt=days===0?'Oggi':days===1?'Domani':days<0?'In corso':`Tra ${days} giorni`;
-    html+=`<div class="card next">
-      <div><div class="kicker">${tag(ch)} ${cnt} · ${isMe(nx.home)?'in casa':'in trasferta'}</div><div class="when">${fmtFull(nx.dt)} · ore ${esc(nx.time)}</div></div>
-      <div class="vs"><div class="t${isMe(nx.home)?' me':''}">${esc(pretty(nx.home))}</div><div class="x">vs</div><div class="t${isMe(nx.away)?' me':''}">${esc(pretty(nx.away))}</div></div>
-      <div class="venue">${esc(nx.campo)} · ${esc(nx.ind)}, ${esc(nx.citta)} (${esc(nx.prov)}) · <a href="${mapUrl(nx)}" target="_blank" rel="noopener">Maps</a></div>
-    </div>`;
-  });
-  html+='</div>';
+  // Prossima partita di ogni campionato, mostrata in fondo alla sua scheda
+  const NEXT=Object.fromEntries(CH_LIST.map(C=>[C.id,upcoming.find(m=>m.ch===C.id)]));
+  let html='';
   // Situazione: stessa scheda per ogni campionato (posizione, V–P, punti, zona, proiezione)
-  html+=`<h2>Situazione</h2><div class="nextgrid g3">${CH_LIST.map(C=>situCard(C,gen)).join('')}</div>`;
-  html+=`<h2>Risultati</h2><div class="list">${past.length?past.map(m=>rowHTML(m,{badge:true,tag:true})).join(''):'<div class="empty">Nessuna partita giocata.</div>'}</div>`;
-  html+=`<h2>Calendario</h2><div class="list">${upcoming.map(m=>rowHTML(m,{badge:true,tag:true,near:upcoming})).join('')||'<div class="empty">Nessuna partita in programma.</div>'}</div>`+legendHTML();
-  html+=exportHTML();
+  const nextBox=m=>{if(!m)return '';const now0=new Date(new Date().toDateString());const d=Math.round((new Date(m.date+'T00:00:00')-now0)/864e5);
+    const when=d===0?'Oggi':d===1?'Domani':fmtFull(m.dt);
+    const opp=isMe(m.home)?m.away:m.home;
+    return `<div class="nextm"><span class="nk">Prossima · ${isMe(m.home)?'in casa':'in trasferta'}</span><span class="nv">${when} · ore ${esc(m.time)} · contro ${esc(pretty(opp))}</span><span class="venue">${esc(m.campo)}, ${esc(m.citta)} · <a href="${mapUrl(m)}" target="_blank" rel="noopener">Maps</a></span></div>`};
+  html+=`<h2>I tre campionati</h2><div class="nextgrid g3">${CH_LIST.map(C=>situCard(C,gen).replace(/<\/div>$/,nextBox(NEXT[C.id])+'</div>')).join('')}</div>`;
+  const N=5,cut=(arr,k,lab)=>arr.length>N?`<details class="more"><summary class="btn ghost">${lab} (${arr.length})</summary><div class="list" style="margin-top:8px">${arr.slice(N).map(k).join('')}</div></details>`:'';
+  const rr=m=>rowHTML(m,{badge:true,tag:true}),rc=m=>rowHTML(m,{badge:true,tag:true,near:upcoming});
+  html+=`<h2>Ultimi risultati</h2><div class="list">${past.length?past.slice(0,N).map(rr).join(''):'<div class="empty">Nessuna partita giocata.</div>'}</div>${cut(past,rr,'Tutti i risultati')}`;
+  html+=`<h2>Prossime partite</h2><div class="list">${upcoming.slice(0,N).map(rc).join('')||'<div class="empty">Nessuna partita in programma.</div>'}</div>${cut(upcoming,rc,'Tutto il calendario')}`+legendHTML();
+  html+=`<details class="expbox"><summary>Esporta per Excel</summary>${exportHTML().replace('<h2>Esporta per Excel</h2>','')}</details>`;
   document.getElementById('p-aurora').innerHTML=html;
   bindExport();
 }
@@ -1093,10 +1123,10 @@ const l5=s=>{const f=s.form.slice(-5);return f.length?`${f.filter(x=>x==='V').le
 function strk(s){const f=s.form;if(!f.length)return '—';const last=f[f.length-1];let n=0;for(let i=f.length-1;i>=0&&f[i]===last;i--)n++;return `<span class="strk ${last}">${last}${n}</span>`}
 function standingsTable(list,opts={}){
   return `<div class="tablebox"><table>
-    <thead><tr><th>#</th><th class="tm">Squadra</th>${opts.gir?'<th style="text-align:center">Gir.</th>':''}<th>Pt</th><th>G</th><th>V</th><th>P</th><th>PF</th><th>PS</th><th title="Quoziente canestri: punti fatti diviso punti subiti">Quoz.</th><th title="Vinte-perse nelle ultime 5 partite">L5</th><th title="Serie in corso: V = vittorie di fila, P = sconfitte di fila">STRK</th></tr></thead>
+    <thead><tr><th>#</th><th class="tm">Squadra</th>${opts.gir?'<th style="text-align:center">Gir.</th>':''}<th>Pt</th><th>G</th><th>V</th><th>P</th><th class="xs">PF</th><th class="xs">PS</th><th title="Quoziente canestri: punti fatti diviso punti subiti">Quoz.</th><th class="xs" title="Vinte-perse nelle ultime 5 partite">L5</th><th title="Serie in corso: V = vittorie di fila, P = sconfitte di fila">STRK</th></tr></thead>
     <tbody>${list.map((s,i)=>{
       const cls=[isMe(s.team)?'aur':'',(opts.cut&&i===opts.cut-1)||(opts.cuts&&opts.cuts.includes(i+1))?'cut':'',opts.groups&&i>0&&i%(opts.groups===true?3:opts.groups)===0&&i!==opts.cut?'sep':''].join(' ');
-      return `<tr class="${cls}"><td class="pos">${opts.gir?s.ov:s.rk}</td><td class="tm">${esc(pretty(s.team))}</td>${opts.gir?`<td class="gr"><span class="gpill">${s.rk}° ${s.gir}</span></td>`:''}<td class="pt">${s.pt}</td><td>${s.g}</td><td>${s.v}</td><td>${s.p}</td><td>${s.ps}</td><td>${s.pss}</td><td>${fq(s)}</td><td>${l5(s)}</td><td>${strk(s)}</td></tr>`}).join('')}</tbody>
+      return `<tr class="${cls}"><td class="pos">${opts.gir?s.ov:s.rk}</td><td class="tm">${esc(pretty(s.team))}</td>${opts.gir?`<td class="gr"><span class="gpill">${s.rk}° ${s.gir}</span></td>`:''}<td class="pt">${s.pt}</td><td>${s.g}</td><td>${s.v}</td><td>${s.p}</td><td class="xs">${s.ps}</td><td class="xs">${s.pss}</td><td>${fq(s)}</td><td class="xs">${l5(s)}</td><td>${strk(s)}</td></tr>`}).join('')}</tbody>
   </table></div>`;
 }
 
@@ -1455,5 +1485,8 @@ document.querySelectorAll('[data-champ]').forEach(b=>b.addEventListener('click',
 document.getElementById('refresh').addEventListener('click',loadLive);
 const hashTab={'#aurora':'aurora','#gironi':'gironi','#generale':'gen','#finali':'fin'}[location.hash];
 let saved=null;try{saved=localStorage.getItem('aur-tab3')}catch(e){}
-renderAll();show(hashTab||(PANELS.includes(saved)?saved:'aurora'));loadLive();
+// All'apertura non mostro i dati salvati (vecchi): aspetto FIP, e se non risponde renderAll() li usa con l'avviso
+document.getElementById('stats').innerHTML=CH_LIST.map(C=>`<div class="sgroup"><div class="sgl"><span class="xs">${C.long} · girone </span><span class="sm">${C.label} · ${C.my}</span></div><div class="srow"><div class="stat"><b>…</b><small>Girone</small><span class="mini">lettura…</span></div></div></div>`).join('');
+PANELS.forEach(k=>{const el=document.getElementById('p-'+k);el.removeAttribute('data-static');el.innerHTML='<div class="empty">Lettura dei dati da FIP…</div>'});
+show(hashTab||(PANELS.includes(saved)?saved:'aurora'));loadLive();
 </script>
