@@ -22,6 +22,7 @@ out=json.loads(subprocess.check_output(['node',TMP]))
 s=re.sub(r'(<div class="stats" id="stats">).*?(</div>\s*<div class="src">)',lambda m:m.group(1)+out['stats']+m.group(2),s,count=1,flags=re.S)
 s=re.sub(r'(<span id="srctext">).*?(</span>)',lambda m:m.group(1)+out['srctext']+m.group(2),s,count=1,flags=re.S)
 for k in ['p-aurora','p-gironi','p-gen','p-fin']:
-    s=re.sub(r'(<section class="panel" id="'+k+r'")[^>]*>.*?(</section>)',lambda m:m.group(1)+' data-static>'+out[k]+m.group(2),s,count=1,flags=re.S)
+    s,n=re.subn(r'(<section class="panel"[^>]*?id="'+k+r'")[^>]*>.*?(</section>)',lambda m:m.group(1)+' data-static>'+out[k]+m.group(2),s,count=1,flags=re.S)
+    if n!=1: sys.exit('pannello non trovato: '+k)
 open(path,'w').write(s)
 print({k:len(v) for k,v in out.items()})
