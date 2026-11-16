@@ -91,7 +91,7 @@ h2{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-sp
 .badge.P{background:var(--loss-bg);color:var(--loss)}
 .badge.S{background:var(--soft);color:var(--muted)}
 .row.aur{border-left:4px solid var(--gold)}
-.unoff{font-size:11px;color:var(--gold-ink);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.unoff{font-size:12px;color:var(--gold-ink);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
 .controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px}
 .seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
 .seg button{border:0;background:transparent;color:var(--fg);padding:7px 14px;font-family:var(--display);font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.04em}
@@ -129,18 +129,18 @@ tr.sep td{border-top:2px solid var(--line)}
 .side-h{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:16px;letter-spacing:.05em;color:var(--fg);display:flex;align-items:baseline;gap:8px}
 .side-h small{font-family:var(--body);text-transform:none;letter-spacing:0;font-size:12.5px;color:var(--muted);font-weight:500}
 .side-scroll{overflow-x:auto;padding-bottom:4px}
-.cols{display:grid;grid-template-columns:repeat(3,minmax(150px,1fr));gap:14px;min-width:500px}
+.cols{display:grid;grid-template-columns:minmax(210px,1.5fr) repeat(2,minmax(140px,1fr));gap:14px;min-width:530px}
 .bcol{display:flex;flex-direction:column;justify-content:space-around;gap:10px;position:relative;padding-top:26px}
 .bcol>h4{position:absolute;top:0;left:0}
 .bcol h4{margin:0 0 4px;font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:13px;letter-spacing:.06em;color:var(--muted)}
 .final{display:flex;flex-direction:column;justify-content:center;gap:8px}
 .final .bm{border-color:var(--gold);border-width:2px}
-.cols.cols5{grid-template-columns:repeat(5,minmax(132px,1fr));min-width:720px}
-.bm .code{display:block;font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.05em;color:var(--muted);padding:3px 8px 0}
+.cols.cols5{grid-template-columns:minmax(170px,1.3fr) repeat(4,minmax(132px,1fr));min-width:750px}
+.bm .code{display:block;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.05em;color:var(--muted);padding:3px 8px 0}
 .bm.tbd .code{font-style:normal}
 .bracket2.big{width:auto;margin-left:0;transform:none;grid-template-columns:1fr}
 .bracket2.big .side-scroll{overflow-x:auto}
-.bracket2.big .cols.cols5{min-width:720px;direction:ltr}
+.bracket2.big .cols.cols5{min-width:750px;direction:ltr}
 .bracket2.big .final{align-items:flex-start}
 .bracket2.big .final .bm{min-width:200px}
 
@@ -154,19 +154,18 @@ tr.sep td{border-top:2px solid var(--line)}
   .side.right .side-h{justify-content:flex-end}
   .bracket2.big{grid-template-columns:1fr;width:auto;margin-left:0;transform:none}
   .bracket2.big .side-scroll{overflow-x:auto}
-  .bracket2.big .cols.cols5{min-width:720px}
+  .bracket2.big .cols.cols5{min-width:750px}
 }
 .bm{background:var(--surface);border:1px solid var(--line);border-radius:9px;overflow:hidden;font-size:13.5px}
 .bm div{display:grid;grid-template-columns:24px 1fr auto;gap:6px;align-items:center;padding:6px 8px;min-width:0}
 .bm div+div{border-top:1px solid var(--line)}
 .bm .s{font-family:var(--display);font-weight:700;color:var(--muted);text-align:center}
-.bm .nm{min-width:0;overflow-wrap:anywhere;line-height:1.2}
-.bm .g{font-size:11px}
+.bm .nm{min-width:0;overflow-wrap:break-word;line-height:1.2}
+.bm .g{font-size:12px}
 .bm div.mine{background:var(--gold-bg)}
 .bm div.mine .nm{font-weight:700;color:var(--me)}
 .bm.tbd div{color:var(--muted);font-style:italic;grid-template-columns:1fr}
 .bm div.bye{color:var(--muted);font-style:italic}
-.bm div.bye .s{opacity:.6}
 /* Senza JavaScript (anteprima file su iPhone): niente schede, tutte le sezioni una sotto l'altra */
 :root:not(.js) nav.tabs,:root:not(.js) .controls,:root:not(.js) .refresh,:root:not(.js) .exp-actions{display:none}
 :root:not(.js) main{display:block;margin-top:18px}
@@ -190,7 +189,7 @@ tr.sep td{border-top:2px solid var(--line)}
 .pigrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:10px}
 .champbar .seg button{padding:7px 11px}
 .dbl{font-weight:600;color:var(--loss)}
-.situ-note{font-size:12px;opacity:.85}
+.situ-note{font-size:12.5px}
 /* Tre campionati affiancati con la stessa struttura */
 .nextgrid.g3{grid-template-columns:1fr}
 @media (min-width:760px){.nextgrid.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -213,7 +212,7 @@ tr.sep td{border-top:2px solid var(--line)}
 .minfo-st{margin:0;color:var(--muted)}
 .minfo dl{margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:6px 16px}
 .minfo dl>div{display:grid;gap:1px;min-width:0}
-.minfo dt{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600}
+.minfo dt{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600}
 .minfo dd{margin:0;overflow-wrap:anywhere}
 .minfo dd span{color:var(--muted)}
 .minfo dd .na{color:var(--muted)}
@@ -250,7 +249,7 @@ tr.sep td{border-top:2px solid var(--line)}
   h1{font-size:28px}
   .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
   .sgroup{gap:2px}
-  .sgl{font-size:10.5px;letter-spacing:.04em;line-height:1.2}
+  .sgl{font-size:11.5px;letter-spacing:.03em;line-height:1.2}
   .srow{gap:0 8px}
   .srow .stat:not(:first-child){display:none}
   .srow .stat b{font-size:24px}
@@ -259,7 +258,7 @@ tr.sep td{border-top:2px solid var(--line)}
   .xs{display:none}
   table{min-width:0;font-size:14px}
   .tablebox th,.tablebox td{padding-left:5px;padding-right:5px}
-  .tablebox th{font-size:11px}
+  .tablebox th{font-size:12px;letter-spacing:.03em}
   td.tm{white-space:normal;line-height:1.2;min-width:110px}
   td.pos{width:24px}
 }
@@ -271,13 +270,13 @@ tr.sep td{border-top:2px solid var(--line)}
       <div class="eyebrow">Stagione 2026/27 · U13 Gold · U14 Gold · U14 Regionale</div>
       <h1>Rimadesio <span>Aurora</span></h1>
     </div>
-    <div class="stats" id="stats"><div class="sgroup"><div class="sgl"><span class="xs">Under 13 Gold · girone </span><span class="sm">U13 Gold · B</span></div><div class="srow">
+    <div class="stats" id="stats"><div class="sgroup"><div class="sgl"><span class="xs">Under 13 Gold · girone B</span><span class="sm">U13 Gold · B</span></div><div class="srow">
       <div class="stat"><b>5°</b><small>Girone</small><span class="mini">1–1 · 2 pt</span></div>
       <div class="stat"><b>1–1</b><small>V–P</small></div>
-      <div class="stat"><b>2</b><small>Punti</small></div></div></div><div class="sgroup"><div class="sgl"><span class="xs">Under 14 Gold · girone </span><span class="sm">U14 Gold · A</span></div><div class="srow">
+      <div class="stat"><b>2</b><small>Punti</small></div></div></div><div class="sgroup"><div class="sgl"><span class="xs">Under 14 Gold · girone A</span><span class="sm">U14 Gold · A</span></div><div class="srow">
       <div class="stat"><b>9°</b><small>Girone</small><span class="mini">1–3 · 2 pt</span></div>
       <div class="stat"><b>1–3</b><small>V–P</small></div>
-      <div class="stat"><b>2</b><small>Punti</small></div></div></div><div class="sgroup"><div class="sgl"><span class="xs">Under 14 Regionale · girone </span><span class="sm">U14 Reg. · K</span></div><div class="srow">
+      <div class="stat"><b>2</b><small>Punti</small></div></div></div><div class="sgroup"><div class="sgl"><span class="xs">Under 14 Regionale · girone K</span><span class="sm">U14 Reg. · K</span></div><div class="srow">
       <div class="stat"><b>2°</b><small>Girone</small><span class="mini">1–1 · 2 pt</span></div>
       <div class="stat"><b>1–1</b><small>V–P</small></div>
       <div class="stat"><b>2</b><small>Punti</small></div></div></div></div>
@@ -1081,7 +1080,7 @@ function rowHTML(m,opts={}){
 function renderHeader(gen){
   document.getElementById('stats').innerHTML=CH_LIST.map(C=>{
     const me=standings(C.id,C.my).find(s=>isMe(s.team));if(!me)return '';
-    return `<div class="sgroup"><div class="sgl"><span class="xs">${C.long} · girone </span><span class="sm">${C.label} · ${C.my}</span></div><div class="srow">
+    return `<div class="sgroup"><div class="sgl"><span class="xs">${C.long} · girone ${C.my}</span><span class="sm">${C.label} · ${C.my}</span></div><div class="srow">
       <div class="stat"><b>${me.rk}°</b><small>Girone</small><span class="mini">${me.v}–${me.p} · ${me.pt} pt</span></div>
       <div class="stat"><b>${me.v}–${me.p}</b><small>V–P</small></div>
       <div class="stat"><b>${me.pt}</b><small>Punti</small></div></div></div>`}).join('');
@@ -1123,10 +1122,10 @@ const l5=s=>{const f=s.form.slice(-5);return f.length?`${f.filter(x=>x==='V').le
 function strk(s){const f=s.form;if(!f.length)return '—';const last=f[f.length-1];let n=0;for(let i=f.length-1;i>=0&&f[i]===last;i--)n++;return `<span class="strk ${last}">${last}${n}</span>`}
 function standingsTable(list,opts={}){
   return `<div class="tablebox"><table>
-    <thead><tr><th>#</th><th class="tm">Squadra</th>${opts.gir?'<th style="text-align:center">Gir.</th>':''}<th>Pt</th><th>G</th><th>V</th><th>P</th><th class="xs">PF</th><th class="xs">PS</th><th title="Quoziente canestri: punti fatti diviso punti subiti">Quoz.</th><th class="xs" title="Vinte-perse nelle ultime 5 partite">L5</th><th title="Serie in corso: V = vittorie di fila, P = sconfitte di fila">STRK</th></tr></thead>
+    <thead><tr><th>#</th><th class="tm">Squadra</th>${opts.gir?'<th style="text-align:center">Gir.</th>':''}<th>Pt</th><th>G</th><th>V</th><th>P</th><th class="xs">PF</th><th class="xs">PS</th><th title="Quoziente canestri: punti fatti diviso punti subiti">Quoz.</th><th class="xs" title="Vinte-perse nelle ultime 5 partite">L5</th><th${opts.gir?' class="xs"':''} title="Serie in corso: V = vittorie di fila, P = sconfitte di fila">STRK</th></tr></thead>
     <tbody>${list.map((s,i)=>{
       const cls=[isMe(s.team)?'aur':'',(opts.cut&&i===opts.cut-1)||(opts.cuts&&opts.cuts.includes(i+1))?'cut':'',opts.groups&&i>0&&i%(opts.groups===true?3:opts.groups)===0&&i!==opts.cut?'sep':''].join(' ');
-      return `<tr class="${cls}"><td class="pos">${opts.gir?s.ov:s.rk}</td><td class="tm">${esc(pretty(s.team))}</td>${opts.gir?`<td class="gr"><span class="gpill">${s.rk}° ${s.gir}</span></td>`:''}<td class="pt">${s.pt}</td><td>${s.g}</td><td>${s.v}</td><td>${s.p}</td><td class="xs">${s.ps}</td><td class="xs">${s.pss}</td><td>${fq(s)}</td><td class="xs">${l5(s)}</td><td>${strk(s)}</td></tr>`}).join('')}</tbody>
+      return `<tr class="${cls}"><td class="pos">${opts.gir?s.ov:s.rk}</td><td class="tm">${esc(pretty(s.team))}</td>${opts.gir?`<td class="gr"><span class="gpill">${s.rk}° ${s.gir}</span></td>`:''}<td class="pt">${s.pt}</td><td>${s.g}</td><td>${s.v}</td><td>${s.p}</td><td class="xs">${s.ps}</td><td class="xs">${s.pss}</td><td>${fq(s)}</td><td class="xs">${l5(s)}</td><td${opts.gir?' class="xs"':''}>${strk(s)}</td></tr>`}).join('')}</tbody>
   </table></div>`;
 }
 
@@ -1288,7 +1287,7 @@ function u14gBracket(g,left,right,rounds,finalLabel){
       for(let i=0;i<prev.length;i+=2){const num=(n-1)*per+i/2+1;boxes+=`<div class="bm tbd"><span class="code">${rounds[r]} ${num}</span><div>Vinc. ${prev[i]}</div><div>Vinc. ${prev[i+1]}</div></div>`;nx.push(`${rounds[r].toLowerCase()} ${num}`)}
       cols+=`<div class="bcol"><h4>${rounds[r]}</h4>${boxes}</div>`;prev=nx;
     }
-    return `<div class="side ${n===1?'left':'right'}"><div class="side-h">Lato ${n}</div><div class="side-scroll"><div class="cols" style="grid-template-columns:repeat(${rounds.length},minmax(150px,1fr));min-width:${rounds.length*165}px">${cols}</div></div></div>`;
+    return `<div class="side ${n===1?'left':'right'}"><div class="side-h">Lato ${n}</div><div class="side-scroll"><div class="cols" style="grid-template-columns:minmax(210px,1.5fr) repeat(${rounds.length-1},minmax(140px,1fr));min-width:${rounds.length*155+70}px">${cols}</div></div></div>`;
   };
   return `<div class="bracket2">${side(1,left)}<div class="final"><h4>${finalLabel}</h4><div class="bm tbd"><div>Vinc. lato 1</div><div>Vinc. lato 2</div></div></div>${side(2,right)}</div>`;
 }
@@ -1486,7 +1485,7 @@ document.getElementById('refresh').addEventListener('click',loadLive);
 const hashTab={'#aurora':'aurora','#gironi':'gironi','#generale':'gen','#finali':'fin'}[location.hash];
 let saved=null;try{saved=localStorage.getItem('aur-tab3')}catch(e){}
 // All'apertura non mostro i dati salvati (vecchi): aspetto FIP, e se non risponde renderAll() li usa con l'avviso
-document.getElementById('stats').innerHTML=CH_LIST.map(C=>`<div class="sgroup"><div class="sgl"><span class="xs">${C.long} · girone </span><span class="sm">${C.label} · ${C.my}</span></div><div class="srow"><div class="stat"><b>…</b><small>Girone</small><span class="mini">lettura…</span></div></div></div>`).join('');
+document.getElementById('stats').innerHTML=CH_LIST.map(C=>`<div class="sgroup"><div class="sgl"><span class="xs">${C.long} · girone ${C.my}</span><span class="sm">${C.label} · ${C.my}</span></div><div class="srow"><div class="stat"><b>…</b><small>Girone</small><span class="mini">lettura…</span></div></div></div>`).join('');
 PANELS.forEach(k=>{const el=document.getElementById('p-'+k);el.removeAttribute('data-static');el.innerHTML='<div class="empty">Lettura dei dati da FIP…</div>'});
 show(hashTab||(PANELS.includes(saved)?saved:'aurora'));loadLive();
 </script>
