@@ -1126,7 +1126,7 @@ function renderGironi(){
   </div>`;
   if(UI.view==='cls'){
     html+=standingsTable(standings(C.id,k),C.id==='U14R'?{cut:U14_CUT}:C.id==='U14G'?{cuts:[U14G_DIRECT,U14G_PLAYIN_TO]}:{});
-    html+=`<p class="note">2 punti a vittoria. A pari punti (art. 62 regolamento gare FIP): tra due squadre contano gli scontri diretti (vittorie, poi quoziente canestri), poi il quoziente su tutto il girone; tra tre o più si fa la classifica dei soli scontri diretti tra loro.${C.id==='U14R'?' La linea tratteggiata separa le prime 3, che vanno nella seconda fase Silver.':''} ${ms.some(m=>m.played&&!m.official)?'Include risultati ufficiosi non ancora omologati. ':''}<a href="${fipUrl(C,k)}" target="_blank" rel="noopener">Girone ${k} su fip.it</a></p>`;
+    html+=`<p class="note">2 punti a vittoria. A pari punti (art. 62 regolamento gare FIP): tra due squadre contano gli scontri diretti (vittorie, poi quoziente canestri), poi il quoziente su tutto il girone; tra tre o più si fa la classifica dei soli scontri diretti tra loro.${C.id==='U14R'?' La linea tratteggiata separa le prime 3, che vanno nella seconda fase Silver.':''} ${(n=>n?`Include ${n} ${n===1?'risultato ufficioso':'risultati ufficiosi'} non ancora omologat${n===1?'o':'i'}: finché FIP non li omologa, l'ordine può essere diverso da quello di fip.it. `:'')(ms.filter(m=>m.played&&!m.official).length)}<a href="${fipUrl(C,k)}" target="_blank" rel="noopener">Girone ${k} su fip.it</a></p>`;
   }else{
     const teams=[...new Set(ms.flatMap(m=>[m.home,m.away]))].sort((a,b)=>pretty(a).localeCompare(pretty(b)));
     if(UI.team&&!teams.includes(UI.team))UI.team='';
@@ -1347,7 +1347,7 @@ function renderGen(gen){
   if(UI.champ==='U14G'){renderGenU14G(el);return}
   el.innerHTML=`<h2>Classifica generale avulsa U13 Gold</h2>
     ${standingsTable(gen,{gir:true,cut:GOLD_SPOTS,groups:true})}
-    <div class="legend"><span><span class="zone gold">1–16</span> Tabellone Gold</span><span><span class="zone silver">17–30</span> Tabellone Silver</span></div>
+    <div class="legend"><span><span class="zone gold">1–${GOLD_SPOTS}</span> Tabellone Gold</span><span><span class="zone silver">${GOLD_SPOTS+1}–${gen.length}</span> Tabellone Silver</span></div>
     <p class="note">Le squadre sono ordinate per posizione nel proprio girone: ai posti 1–3 le prime dei tre gironi, ai posti 4–6 le seconde, e così via. A pari posizione decidono i punti in classifica, poi il quoziente canestri. Al 16° posto va la migliore delle tre seste.${new Set(gen.map(s=>s.g)).size>1?' Alcune squadre hanno giocato meno partite, quindi a metà stagione il confronto tra gironi è solo indicativo.':''}</p>`;
 }
 
